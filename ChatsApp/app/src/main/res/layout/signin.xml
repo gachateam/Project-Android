@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:textSize="70dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            ></TextView>
+
+        <android.inputmethodservice.ExtractEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_marginTop="20dp"
+            android:textSize="25dp">
+        </android.inputmethodservice.ExtractEditText>
+        <android.inputmethodservice.ExtractEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Password"
+            android:hint="Password"
+            android:layout_marginTop="20dp"
+            android:textSize="25dp">
+        </android.inputmethodservice.ExtractEditText>
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            ></Button>
+    </LinearLayout>
+
+</LinearLayout>
