@@ -10,4 +10,12 @@
     <string name="register">Register</string>
     <string name="sign_in">Sign In</string>
     <string name="login">LOGIN</string>
+    <string name="sample_name">Sample Name</string>
+    <string name="tap_to_chat">Tap to chat</string>
+    <string-array name="test">
+        <item>test</item>
+        <item>123</item>
+        <item>234</item>
+        <item>345</item>
+    </string-array>
 </resources>
