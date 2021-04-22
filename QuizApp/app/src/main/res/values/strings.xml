@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">QuizApp</string>
+    <string name="app_name">My Application</string>
+    <string name="btnNext">Next</string>
+    <string name="btnSubmit">My Submit</string>
+    <string name="txtview1">Quiz</string>
 </resources>
