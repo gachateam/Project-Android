@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -32,7 +30,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:src="@drawable/ic_left_arrow"
-                app:tint="@color/white"></ImageView>
+                app:tint="@color/white"
+                android:contentDescription="@string/app_name" />
         </LinearLayout>
 
         <LinearLayout
@@ -64,9 +63,9 @@
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Noi dung cau hoi"
+            android:text="@string/noi_dung_cau_hoi"
             android:gravity="center_vertical"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:padding="10dp"/>
     </LinearLayout>
 
@@ -82,7 +81,7 @@
             android:id="@+id/checkA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đáp án A"
+            android:text="@string/p_n_a"
             android:textSize="25sp"
             android:layout_marginTop="25dp"
             />
@@ -90,7 +89,7 @@
             android:id="@+id/checkB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đáp án B"
+            android:text="@string/p_n_b"
             android:textSize="25sp"
             android:layout_marginTop="25dp"
             />
@@ -98,14 +97,14 @@
             android:id="@+id/checkC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đáp án C"
+            android:text="@string/p_n_c"
             android:textSize="25sp"
             android:layout_marginTop="25dp"/>
         <CheckBox
             android:id="@+id/checkD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đáp án D"
+            android:text="@string/p_n_d"
             android:textSize="25sp"
             android:layout_marginTop="25dp"/>
     </LinearLayout>
@@ -121,10 +120,7 @@
             android:layout_width="255dp"
             android:layout_height="wrap_content"
             android:text="@string/btnNext"
-            android:textSize="20dp"
-            android:padding="10dp"
-            >
-
-        </Button>
+            android:textSize="20sp"
+            android:padding="10dp" />
     </LinearLayout>
 </LinearLayout>

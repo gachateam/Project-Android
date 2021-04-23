@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "445864982721",
+    "project_id": "phonestore-ceaf4",
+    "storage_bucket": "phonestore-ceaf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445864982721:android:13a51cca0e34cac3ddbc40",
+        "android_client_info": {
+          "package_name": "com.gacha.quizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445864982721-njlkiq86hoto96v68jj57tl7sjqunc3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnpXTrdPTsV6FvDY7Uq2u4i-0-aVRQ0pU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445864982721-njlkiq86hoto96v68jj57tl7sjqunc3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
