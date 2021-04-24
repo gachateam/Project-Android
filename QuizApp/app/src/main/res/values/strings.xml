@@ -1,4 +1,12 @@
 <resources>
+    <string name="btnNext">Next</string>
+    <string name="btnSubmit">My Submit</string>
+    <string name="txtview1">Quiz</string>
+    <string name="noi_dung_cau_hoi">Noi dung cau hoi</string>
+    <string name="p_n_a">Đáp án A</string>
+    <string name="p_n_b">Đáp án B</string>
+    <string name="p_n_c">Đáp án C</string>
+    <string name="p_n_d">Đáp án D</string>
     <string name="app_name">EnglishTest</string>
     <string name="tittle_screen">Quiz List</string>
     <string name="recent_tittle">Recent Quizs</string>
