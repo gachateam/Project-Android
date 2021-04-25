@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -74,40 +78,41 @@
         android:layout_height="0dp"
         android:layout_weight="6"
         android:gravity="center"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <CheckBox
             android:id="@+id/checkA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_n_a"
-            android:textSize="25sp"
             android:layout_marginTop="25dp"
-            />
+            android:text="@string/p_n_a"
+            android:textSize="25sp" />
+
         <CheckBox
             android:id="@+id/checkB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_n_b"
-            android:textSize="25sp"
             android:layout_marginTop="25dp"
-            />
+            android:text="@string/p_n_b"
+            android:textSize="25sp" />
+
         <CheckBox
             android:id="@+id/checkC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:text="@string/p_n_c"
-            android:textSize="25sp"
-            android:layout_marginTop="25dp"/>
+            android:textSize="25sp" />
+
         <CheckBox
             android:id="@+id/checkD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:text="@string/p_n_d"
-            android:textSize="25sp"
-            android:layout_marginTop="25dp"/>
+            android:textSize="25sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
