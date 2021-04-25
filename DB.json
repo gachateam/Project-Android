@@ -23,92 +23,92 @@
                     "dapandung": "required"
                 },
                   {
-                    "cau hoi 3": "I received housing benefit when I was 'unemployed'.",
-                    "dap an": [
+                    "cauhoi": "I received housing benefit when I was 'unemployed'.",
+                    "dapan": [
                         "out of order",
                         "out of fashion    ",
                         "out of work     ",
                         "out of practice"
                     ],
-                    "dap an dung": "out of work     "
+                    "dapandung": "out of work     "
                 },
                   {
-                    "cau hoi 4": "The related publications are far too 'numerous' to list individually.",
-                    "dap an": [
+                    "cauhoi": "The related publications are far too 'numerous' to list individually.",
+                    "dapan": [
                         "much",
                         "legion",
                         "few",
                         "full"
                     ],
-                    "dap an dung": "much"
+                    "dapandung": "much"
                 },
                   {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": "The teacher gave some 'suggestions' on what would come out for the examination.",
+                    "dapan": [
+                        "symptoms",
+                        "demonstrations",
+                        "effects",
+                        "hints"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "hints"
                 },
                   {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": "When being interviewed, you should 'concentrate' on what the interviewer is saying or asking you",
+                    "dapan": [
+                        "relate on     ",
+                        "be interested in     ",
+                        "impress on     ",
+                        "pay attention to"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "pay attention to"
                 },
                   {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": "She came to the meeting late 'on purpose' so she would miss the introductory speech.",
+                    "dapan": [
+                        "aiming at     ",
+                        "intentionally",
+                        "reasonably ",
+                        "with a goal"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "with a goal"
                 },
                   {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": "The use of lasers in surgery has become 'relatively' commonplace in recent years",
+                    "dapan": [
+                        "comparatively ",
+                        "relevantly",
+                        "absolutely ",
+                        "almost"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "comparatively "
                 },  {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": "The first few days at university can be very 'daunting', but with determination and positive attitude, freshmen will soon fit in with the new environment.",
+                    "dapan": [
+                        "interesting ",
+                        "memorable ",
+                        "serious",
+                        "depressing"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "depressing"
                 },  {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": "Did anyone 'acknowledge' responsibility for the outbreak of the fire ?",
+                    "dapan": [
+                        "inquire about    ",
+                        "accept ",
+                        "report",
+                        "find out"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "accept "
                 },
                   {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
+                    "cauhoi": " 'Childbearing' is the women's most wonderful role.",
+                    "dapan": [
+                        "Giving birth to a baby     ",
+                        "Bring up a child",
+                        "Educating a child",
+                        "Having no child"
                     ],
-                    "dap an dung": ""
+                    "dapandung": "Giving birth to a baby     "
                 },
                 
             ]
