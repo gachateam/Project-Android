@@ -15,6 +15,8 @@
     <string name="W3C_tittle">W3C Css Quizs</string>
     <string name="photoshop_tittle">Photoshop Quizs</string>
     <string name="btn_start">Start</string>
+    <string name="btnSu">Submit</string>
+
 
     <string name="strart_marketing">Makerting Skill Quiz</string>
     <string name="btn_start_quiz">Start Quiz</string>
