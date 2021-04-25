@@ -1,8 +1,48 @@
 {
-    "unit": [
+    "unit": "Tìm từ đồng nghĩa" [
         {
-            "cau hoi": [
+            "cau hoi 1": [
                 {
+                    "cau hoi": "I didn’t think his the comments were very 'appropriate' at the time.",
+                    "dap an": [
+                        "correct ",
+                        "right",
+                        "exact",
+                        "suitable"
+                    ],
+                    "dap an dung": "suitable"
+                },
+                {
+                    "cau hoi 2": "GCSE are not 'compulsory', but they are the most common qualifications taken by students",
+                    "dap an": [
+                        "required",
+                        "applied     ",
+                        "fulfilled     ",
+                        "specialized"
+                    ],
+                    "dap an dung": "required"
+                },
+                  {
+                    "cau hoi 3": "I received housing benefit when I was 'unemployed'.",
+                    "dap an": [
+                        "out of order",
+                        "out of fashion    ",
+                        "out of work     ",
+                        "out of practice"
+                    ],
+                    "dap an dung": "out of work     "
+                },
+                  {
+                    "cau hoi 4": "The related publications are far too 'numerous' to list individually.",
+                    "dap an": [
+                        "much",
+                        "legion",
+                        "few",
+                        "full"
+                    ],
+                    "dap an dung": "much"
+                },
+                  {
                     "cau hoi": "",
                     "dap an": [
                         "",
@@ -12,21 +52,7 @@
                     ],
                     "dap an dung": ""
                 },
-                {
-                    "cau hoi": "",
-                    "dap an": [
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "dap an dung": ""
-                }
-            ]
-        },
-        {
-            "cau hoi": [
-                {
+                  {
                     "cau hoi": "",
                     "dap an": [
                         "",
@@ -36,7 +62,7 @@
                     ],
                     "dap an dung": ""
                 },
-                {
+                  {
                     "cau hoi": "",
                     "dap an": [
                         "",
@@ -45,7 +71,46 @@
                         ""
                     ],
                     "dap an dung": ""
-                }
+                },
+                  {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                },  {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                },  {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                },
+                  {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                },
+                
             ]
         }
     ]
