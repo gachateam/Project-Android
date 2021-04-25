@@ -1,50 +1,52 @@
 {
-    "unit1": {
-        "cau hoi": [
-            {
-                "cau hoi": "",
-                "dap an": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "dap an dung": ""
-            },
-            {
-                "cau hoi": "",
-                "dap an": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "dap an dung": ""
-            }
-        ]
-    },
-    "unit2": {
-        "cau hoi": [
-            {
-                "cau hoi": "",
-                "dap an": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "dap an dung": ""
-            },
-            {
-                "cau hoi": "",
-                "dap an": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "dap an dung": ""
-            }
-        ]
-    }
+    "unit": [
+        {
+            "cau hoi": [
+                {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                },
+                {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                }
+            ]
+        },
+        {
+            "cau hoi": [
+                {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                },
+                {
+                    "cau hoi": "",
+                    "dap an": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "dap an dung": ""
+                }
+            ]
+        }
+    ]
 }
