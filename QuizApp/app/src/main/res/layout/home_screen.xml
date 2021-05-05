@@ -1,12 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="3">
+
+        <TextView
+            android:layout_gravity=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tittle_screen">
+
+        </TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:gravity="start"
+            android:text="@string/recent_tittle" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/marketing_tittle" />
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/bootstrap_tittle" />
+
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/W3C_tittle" />
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/photo_shop_tittle" />
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

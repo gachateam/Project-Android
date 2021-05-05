@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.gacha.quizapp.MainActivity"
     android:orientation="vertical">
-
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +26,6 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:src="@drawable/ic_left_arrow"
-                app:tint="@color/white"
                 android:contentDescription="@string/app_name" />
         </LinearLayout>
 
@@ -76,41 +69,40 @@
         android:layout_height="0dp"
         android:layout_weight="6"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <CheckBox
             android:id="@+id/checkA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:text="@string/p_n_a"
-            android:textSize="25sp" />
-
+            android:textSize="25sp"
+            android:layout_marginTop="25dp"
+            />
         <CheckBox
             android:id="@+id/checkB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:text="@string/p_n_b"
-            android:textSize="25sp" />
-
+            android:textSize="25sp"
+            android:layout_marginTop="25dp"
+            />
         <CheckBox
             android:id="@+id/checkC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:text="@string/p_n_c"
-            android:textSize="25sp" />
-
+            android:textSize="25sp"
+            android:layout_marginTop="25dp"/>
         <CheckBox
             android:id="@+id/checkD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:text="@string/p_n_d"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginTop="25dp"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -123,7 +115,7 @@
             android:id="@+id/btnNext"
             android:layout_width="255dp"
             android:layout_height="wrap_content"
-            android:text="@string/btnNext"
+            android:text="@string/btnSu"
             android:textSize="20sp"
             android:padding="10dp" />
     </LinearLayout>
