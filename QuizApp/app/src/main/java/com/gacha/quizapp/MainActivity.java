@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.quiz_questions);
         ActionBar actionBar = getSupportActionBar();
 
-        assert actionBar != null;
-        actionBar.hide();
         Button btn = findViewById(R.id.btnNext);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
@@ -41,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         txtClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                myDialog.dismiss();
 
             }
         });
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+myDialog.dismiss();
             }
         });
         myDialog.show();

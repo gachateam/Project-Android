@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="90% Score "
+        android:text="90% Score"
         android:textStyle="bold"
         android:textColor="@color/green"
         android:layout_gravity="center_horizontal"
@@ -63,6 +63,7 @@
 
     </TextView>
     <Button
+
         android:id="@+id/ok"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"

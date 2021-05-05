@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="SreenHome">
-        <item name="android:layout_width">wrap_content</item>
+    <style name="ScreenHome">
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
     </style>
 
@@ -13,8 +13,8 @@
 
 <!--    phim start-->
     <style name="btn_start">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_margin">20dp</item>
 
     </style>

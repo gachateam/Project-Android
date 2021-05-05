@@ -13,7 +13,7 @@
     <string name="marketing_tittle">Marketing Quizs</string>
     <string name="bootstrap_tittle">Bootsrap Quiz</string>
     <string name="W3C_tittle">W3C Css Quizs</string>
-    <string name="photoshop_tittle">Photoshop Quizs</string>
+    <string name="photo_shop_tittle">Photoshop Quizs</string>
     <string name="btn_start">Start</string>
     <string name="btnSu">Submit</string>
 
@@ -21,12 +21,14 @@
     <string name="strart_marketing">Makerting Skill Quiz</string>
     <string name="btn_start_quiz">Start Quiz</string>
     <string name="mota_makerting">abcanslkdadjiajdlkajdslkajdklajdklajdlkajdwoiaa</string>
-
-
-
-
-
-
+    <string name="company_logo">Company Logo</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="toy_line">Toy Line</string>
+    <string name="sign_in">Sign in</string>
+    <string name="login_with_google">login with google</string>
+    <string name="login_with_facebook">login with facebook</string>
+    <string name="you_don_t_have_an_account">You don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
 
 
 </resources>

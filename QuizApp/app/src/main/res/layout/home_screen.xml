@@ -1,40 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    >
-
-    <!--    <com.google.android.material.navigation.NavigationView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        app:menu="@menu/navigation_menu"-->
-    <!--        android:layout_gravity="start"-->
-    <!--        app:headerLayout="@layout/nav_header"-->
-    <!--        android:id="@+id/nv">-->
-    <!--    </com.google.android.material.navigation.NavigationView>-->
-
+    android:orientation="vertical">
 
     <LinearLayout
-        style="@style/SreenHome"
-        android:layout_weight="3"
-        >
-
-        <!--Navigation-->
-        <!--<com.google.android.material.navigation.NavigationView-->
-        <!--    android:layout_width="wrap_content"-->
-        <!--    android:layout_height="match_parent"-->
-        <!--    app:menu="@menu/navigation_menu"-->
-        <!--    android:layout_gravity="start"-->
-        <!--    app:headerLayout="@layout/nav_header"-->
-        <!--    android:id="@+id/nv">-->
-        <!--</com.google.android.material.navigation.NavigationView>-->
-
-        <!--QuizList-->
+        style="@style/ScreenHome"
+        android:layout_weight="3">
 
         <TextView
             android:layout_gravity=""
@@ -47,85 +22,72 @@
 
 
     <LinearLayout
-        style="@style/SreenHome"
-        android:layout_weight="6"
-        android:orientation="vertical"
-        >
+        style="@style/ScreenHome"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <TextView
-            android:gravity="start"
             style="@style/Text_Quiz"
-            android:text="@string/recent_tittle">
+            android:gravity="start"
+            android:text="@string/recent_tittle" />
 
-        </TextView>
-
-        <LinearLayout
-            style="@style/SreenHome"
-            android:layout_weight="2">
-            <TextView
-                style="@style/Text_Quiz"
-                android:text="@string/marketing_tittle">
-
-            </TextView>
-            <Button
-                style="@style/btn_start"
-                android:text="@string/btn_start">
-
-            </Button>
-
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/SreenHome"
-            android:layout_weight="2">
-            <TextView
-                style="@style/Text_Quiz"
-                android:text="@string/bootstrap_tittle">
-
-            </TextView>
-
-            <Button
-                style="@style/btn_start"
-                android:text="@string/btn_start">
-
-            </Button>
-
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/SreenHome"
-            android:layout_weight="2">
-            <TextView
-                style="@style/Text_Quiz"
-                android:text="@string/W3C_tittle">
-
-            </TextView>
-
-            <Button
-                style="@style/btn_start"
-
-                android:text="@string/btn_start">
-            </Button>
-
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/SreenHome"
-            android:layout_weight="2">
-            <TextView
-                style="@style/Text_Quiz"
-                android:text="@string/photoshop_tittle">
-
-            </TextView>
-
-            <Button
-                style="@style/btn_start"
-                android:text="@string/btn_start">
-
-            </Button>
-
-        </LinearLayout>
 
     </LinearLayout>
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/marketing_tittle" />
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/bootstrap_tittle" />
+
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/W3C_tittle" />
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ScreenHome"
+        android:layout_weight="2">
+
+        <TextView
+            style="@style/Text_Quiz"
+            android:text="@string/photo_shop_tittle" />
+
+        <Button
+            style="@style/btn_start"
+            android:text="@string/btn_start" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
