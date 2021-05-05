@@ -8,4 +8,18 @@
     <string name="p_n_b">Đáp án B</string>
     <string name="p_n_c">Đáp án C</string>
     <string name="p_n_d">Đáp án D</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="tag_line">Tag Line</string>
+    <string name="login_with_google">login with google</string>
+    <string name="login_with_facebook">login with facebook</string>
+    <string name="you_don_t_have_an_account">You don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="usename">Usename</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
