@@ -12,7 +12,8 @@
         style="@style/ScreenHome"
         android:layout_weight="3">
 
-        <View
+        <ImageView
+            android:id="@+id/"
             android:layout_width="match_parent"
             android:layout_height="239dp"
             android:layout_gravity="center_horizontal"

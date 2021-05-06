@@ -62,7 +62,8 @@
         android:layout_weight="3"
         android:orientation="vertical">
 
-        <View
+        <ImageView
+            android:id="@+id/hinh"1
             android:layout_width="422dp"
             android:layout_height="271dp"
             android:layout_gravity="center_horizontal"
