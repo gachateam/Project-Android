@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Dialog myDialog;
+     Dialog myDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.btnNext);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-        btn.setOnClickListener(v -> myRef.setValue("lo cc"));
-
-<<<<<<< HEAD
 
 
 
-=======
         myDialog = new Dialog(this);
     }
 
@@ -55,10 +51,11 @@ public class MainActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-myDialog.dismiss();
+
+                myDialog.dismiss();
             }
         });
         myDialog.show();
->>>>>>> 9f6ce4f14d188cdd4e3ae5bf868cf5a74261551e
+
     }
 }

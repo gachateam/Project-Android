@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="btnNext">Next</string>
     <string name="btnSubmit">My Submit</string>
@@ -7,10 +8,10 @@
     <string name="p_n_b">Đáp án B</string>
     <string name="p_n_c">Đáp án C</string>
     <string name="p_n_d">Đáp án D</string>
-<<<<<<< HEAD
+
     <string name="company_logo">Company Logo</string>
     <string name="tag_line">Tag Line</string>
-=======
+
     <string name="app_name">EnglishTest</string>
     <string name="tittle_screen">Quiz List</string>
     <string name="recent_tittle">Recent Quizs</string>
@@ -25,18 +26,18 @@
     <string name="strart_marketing">Makerting Skill Quiz</string>
     <string name="btn_start_quiz">Start Quiz</string>
     <string name="mota_makerting">abcanslkdadjiajdlkajdslkajdklajdklajdlkajdwoiaa</string>
-    <string name="company_logo">Company Logo</string>
+
     <string name="forgot_password">Forgot Password</string>
     <string name="toy_line">Toy Line</string>
     <string name="sign_in">Sign in</string>
->>>>>>> 9f6ce4f14d188cdd4e3ae5bf868cf5a74261551e
+
     <string name="login_with_google">login with google</string>
     <string name="login_with_facebook">login with facebook</string>
     <string name="you_don_t_have_an_account">You don\'t have an account?</string>
     <string name="sign_up">Sign up</string>
-<<<<<<< HEAD
-    <string name="forgot_password">Forgot Password</string>
-    <string name="sign_in">Sign In</string>
+
+
+
     <string name="confirm_password">Confirm Password</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
@@ -44,8 +45,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
-=======
 
 
-</resources>
->>>>>>> 9f6ce4f14d188cdd4e3ae5bf868cf5a74261551e
+
+

@@ -7,25 +7,33 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
     <LinearLayout
         style="@style/ScreenHome"
         android:layout_weight="3">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_wave__4_"
+            android:scrollbarSize="2dp" />
+
         <TextView
-            android:layout_gravity=""
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity=""
             android:text="@string/tittle_screen">
 
         </TextView>
-    </LinearLayout>
 
+    </LinearLayout>
 
     <LinearLayout
         style="@style/ScreenHome"
         android:layout_weight="1"
         android:orientation="vertical">
-
         <TextView
             style="@style/Text_Quiz"
             android:gravity="start"
@@ -33,6 +41,7 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         style="@style/ScreenHome"
         android:layout_weight="2">
