@@ -6,12 +6,6 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +42,7 @@
 
     </androidx.appcompat.widget.Toolbar>
     <LinearLayout
-        android:id="@+id/questionview"
+        android:id="@+id/questionView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
@@ -76,7 +70,7 @@
             android:id="@+id/checkA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_n_a"
+            android:text="@string/quesA"
             android:textSize="25sp"
             android:layout_marginTop="25dp"
             />
@@ -84,7 +78,7 @@
             android:id="@+id/checkB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_n_b"
+            android:text="@string/quesB"
             android:textSize="25sp"
             android:layout_marginTop="25dp"
             />
@@ -92,14 +86,14 @@
             android:id="@+id/checkC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_n_c"
+            android:text="@string/quesC"
             android:textSize="25sp"
             android:layout_marginTop="25dp"/>
         <CheckBox
             android:id="@+id/checkD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_n_d"
+            android:text="@string/quesD"
             android:textSize="25sp"
             android:layout_marginTop="25dp"/>
     </LinearLayout>

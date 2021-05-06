@@ -1,12 +1,10 @@
 package com.gacha.quizapp;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.gacha.quizapp.adapters.SignInAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class SignInActivity extends AppCompatActivity {

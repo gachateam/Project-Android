@@ -4,27 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.gacha.quizapp.MainActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/blue"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <!--            Mũi tên lùi về-->
 
             <ImageView
                 android:id="@+id/imageView1"
@@ -55,37 +51,63 @@
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
-    <LinearLayout
-        android:id="@+id/questionview"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/questionView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="5"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/hinh"1
-            android:layout_width="422dp"
-            android:layout_height="271dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/ic_wave__4_"
-            android:scrollbarSize="2dp" />
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/blue"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_gon_song"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/question"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:padding="10dp"
             android:text="@string/noi_dung_cau_hoi"
-            android:textSize="15sp"
-            />
-    </LinearLayout>
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.275" />
 
-    <LinearLayout
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="4"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -93,34 +115,58 @@
             android:id="@+id/checkA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/p_n_a"
-            android:textSize="25sp" />
+            android:width="400dp"
+            android:text="@string/quesA"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/checkB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/shadow" />
 
         <CheckBox
             android:id="@+id/checkB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/p_n_b"
-            android:textSize="25sp" />
+            android:width="400dp"
+            android:text="@string/quesB"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/checkC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkA"
+            android:background="@drawable/shadow" />
 
         <CheckBox
             android:id="@+id/checkC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/p_n_c"
-            android:textSize="25sp" />
+            android:width="400dp"
+            android:text="@string/quesC"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/checkD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkB"
+            android:background="@drawable/shadow" />
 
         <CheckBox
             android:id="@+id/checkD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/p_n_d"
-            android:textSize="25sp" />
-    </LinearLayout>
+            android:width="400dp"
+            android:text="@string/quesD"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkC"
+            android:background="@drawable/shadow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -130,12 +176,11 @@
         android:orientation="vertical">
 
         <Button
-            android:onClick="showPopup"
             android:id="@+id/btnNext"
             android:layout_width="255dp"
             android:layout_height="wrap_content"
             android:text="@string/btnNext"
             android:textSize="20sp"
-            android:padding="10dp" />
+            android:background="@drawable/gradient"/>
     </LinearLayout>
 </LinearLayout>

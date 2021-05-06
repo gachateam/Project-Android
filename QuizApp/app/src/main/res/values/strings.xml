@@ -4,10 +4,10 @@
     <string name="btnSubmit">My Submit</string>
     <string name="txtview1">Quiz</string>
     <string name="noi_dung_cau_hoi">Noi dung cau hoi</string>
-    <string name="p_n_a">Đáp án A</string>
-    <string name="p_n_b">Đáp án B</string>
-    <string name="p_n_c">Đáp án C</string>
-    <string name="p_n_d">Đáp án D</string>
+    <string name="quesA">Đáp án A</string>
+    <string name="quesB">Đáp án B</string>
+    <string name="quesC">Đáp án C</string>
+    <string name="quesD">Đáp án D</string>
 
     <string name="company_logo">Company Logo</string>
     <string name="tag_line">Tag Line</string>
@@ -22,7 +22,6 @@
     <string name="btn_start">Start</string>
     <string name="btnSu">Submit</string>
 
-
     <string name="strart_marketing">Makerting Skill Quiz</string>
     <string name="btn_start_quiz">Start Quiz</string>
     <string name="mota_makerting">abcanslkdadjiajdlkajdslkajdklajdklajdlkajdwoiaa</string>
@@ -36,14 +35,13 @@
     <string name="you_don_t_have_an_account">You don\'t have an account?</string>
     <string name="sign_up">Sign up</string>
 
-
-
     <string name="confirm_password">Confirm Password</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="usename">Usename</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recent_quiz">RecentQuiz</string>
 </resources>
 
 

@@ -1,10 +1,14 @@
-package com.gacha.quizapp;
+package com.gacha.quizapp.adapters;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.gacha.quizapp.fragment.SignInFragment;
+import com.gacha.quizapp.fragment.SignUpFragment;
 
 public class SignInAdapter extends FragmentPagerAdapter {
     private Context context;
@@ -21,14 +25,13 @@ public class SignInAdapter extends FragmentPagerAdapter {
         return totalTabs;
     }
 
+    @NonNull
     public Fragment getItem(int position){
         switch (position){
             case 0:
-                SignInFragment signInFragment = new SignInFragment();
-                return signInFragment;
+                return new SignInFragment();
             case 1:
-                SignUpFragment signUpFragment = new SignUpFragment();
-                return signUpFragment;
+                return new SignUpFragment();
             default:
                 return null;
         }
