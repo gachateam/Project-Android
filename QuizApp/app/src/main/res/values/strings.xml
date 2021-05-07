@@ -2,7 +2,7 @@
 <resources>
     <string name="btnNext">Next</string>
     <string name="btnSubmit">My Submit</string>
-    <string name="txtview1">Quiz</string>
+    <string name="txt_view1">Quiz</string>
     <string name="noi_dung_cau_hoi">Noi dung cau hoi</string>
     <string name="quesA">Đáp án A</string>
     <string name="quesB">Đáp án B</string>
@@ -14,17 +14,16 @@
 
     <string name="app_name">EnglishTest</string>
     <string name="tittle_screen">Quiz List</string>
-    <string name="recent_tittle">Recent Quizs</string>
-    <string name="marketing_tittle">Marketing Quizs</string>
-    <string name="bootstrap_tittle">Bootsrap Quiz</string>
-    <string name="W3C_tittle">W3C Css Quizs</string>
-    <string name="photo_shop_tittle">Photoshop Quizs</string>
+    <string name="recent_tittle">Recent Quizzes</string>
+    <string name="marketing_tittle">Marketing Quizzes</string>
+    <string name="bootstrap_tittle">Bootstrap Quiz</string>
+    <string name="W3C_tittle">W3C Css Quizzes</string>
+    <string name="photo_shop_tittle">Photo shop Quizzes</string>
     <string name="btn_start">Start</string>
     <string name="btnSu">Submit</string>
 
-    <string name="strart_marketing">Makerting Skill Quiz</string>
+    <string name="start_marketing">Marketing Skill Quiz</string>
     <string name="btn_start_quiz">Start Quiz</string>
-    <string name="mota_makerting">abcanslkdadjiajdlkajdslkajdklajdklajdlkajdwoiaa</string>
 
     <string name="forgot_password">Forgot Password</string>
     <string name="toy_line">Toy Line</string>
@@ -38,11 +37,26 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
-    <string name="usename">Usename</string>
+    <string name="username">Username</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="recent_quiz">RecentQuiz</string>
     <string name="start_quiz">Start Quiz</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="sign_out">Sign out</string>
+    <string name="congrats">Congrats!</string>
+    <string name="congrats_successfully">Your quiz congrats successfully</string>
+    <string name="ok">Ok</string>
 </resources>
 
 

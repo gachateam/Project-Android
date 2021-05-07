@@ -40,7 +40,7 @@
             android:id="@+id/button3"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button"
+            android:background="@drawable/custom_button"
             android:text="@string/btn_start"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
