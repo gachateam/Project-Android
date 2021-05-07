@@ -19,6 +19,16 @@
 
     </style>
     <style name="Widget.Button" parent="android:Widget">
-        <item name="android:background">@drawable/gradient</item>
+        <item name="android:background">@drawable/button_pressed</item>
+    </style>
+
+    <style name="custom_check_box">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:width">380dp</item>
+        <item name="android:button">@drawable/custom_check_box</item>
+        <item name="android:textSize">25sp</item>
     </style>
 </resources>

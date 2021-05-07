@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         listCategory.add(new Category("test",this.getResources().getColor(R.color.colorPrimary)));
         listCategory.add(new Category("clone",this.getResources().getColor(R.color.colorPrimaryDark)));
 
-        listRecentQuiz.add(new RecentQuiz("131","123"));
+        listRecentQuiz.add(new RecentQuiz("13123123123123123121","123"));
         listRecentQuiz.add(new RecentQuiz("131","123"));
         listRecentQuiz.add(new RecentQuiz("131","123"));
         listRecentQuiz.add(new RecentQuiz("131","123"));

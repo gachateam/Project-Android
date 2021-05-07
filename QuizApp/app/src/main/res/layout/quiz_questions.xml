@@ -107,65 +107,77 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="6"
         android:gravity="center"
         android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/checkA"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="400dp"
-            android:text="@string/quesA"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkB"
+            android:layout_height="60dp"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/shadow" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <CheckBox
-            android:id="@+id/checkB"
+            <android.widget.CheckBox
+                android:id="@+id/checkA"
+                style="@style/custom_check_box"
+                android:text="@string/quesA" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="400dp"
-            android:text="@string/quesB"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkC"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkA"
-            android:background="@drawable/shadow" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView1"
+            android:elevation="10dp">
+            <android.widget.CheckBox
+                android:id="@+id/checkB"
+                style="@style/custom_check_box"
+                android:text="@string/quesB" />
+        </androidx.cardview.widget.CardView>
 
-        <CheckBox
-            android:id="@+id/checkC"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="400dp"
-            android:text="@string/quesC"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkD"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkB"
-            android:background="@drawable/shadow" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+            android:elevation="10dp">
+            <android.widget.CheckBox
+                android:id="@+id/checkC"
+                style="@style/custom_check_box"
+                android:text="@string/quesC" />
+        </androidx.cardview.widget.CardView>
 
-        <CheckBox
-            android:id="@+id/checkD"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="400dp"
-            android:text="@string/quesD"
-            android:textSize="25sp"
+            android:layout_height="60dp"
+            android:elevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkC"
-            android:background="@drawable/shadow" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+            <android.widget.CheckBox
+                android:id="@+id/checkD"
+                style="@style/custom_check_box"
+                android:text="@string/quesD" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -175,12 +187,12 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btnNext"
             android:layout_width="255dp"
             android:layout_height="wrap_content"
             android:text="@string/btnNext"
             android:textSize="20sp"
-            android:background="@drawable/gradient"/>
+           android:background="@drawable/button" />
     </LinearLayout>
 </LinearLayout>
