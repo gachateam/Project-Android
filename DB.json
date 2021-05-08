@@ -205,8 +205,8 @@
             ]
         },
         {
-            "name": "",
-            "description": "Tìm câu cận nghĩa Tiếng Anh",
+            "name": "Tìm câu cận nghĩa Tiếng Anh",
+            "description": "",
             "cauhoi": [
                 {
                     "cauhoi": "I have never been to Russia. I think I shall go there next year.” said Bill.",
@@ -415,6 +415,210 @@
                         "Last week I went to the garage by cars."
                     ],
                     "dapandung": "1"
+                }
+            ]
+        },
+        {
+            "name": "trắc nghiệm Multiple Choice",
+            "description": "",
+            "cauhoi": [
+                {
+                    "cauhoi": "When we went back to the bookstore, the bookseller _______ the book we wanted.",
+                    "dapan": [
+                        "sold",
+                        "had sold",
+                        "harvest",
+                        "are harvested"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "The director _______ for the meeting by the time I got to his office.",
+                    "dapan": [
+                        "left",
+                        "had left",
+                        "leaves",
+                        "will leave"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "By the end of last summer, the farmers _______ all the crop",
+                    "dapan": [
+                        "harvested ",
+                        "had harvested",
+                        "harvest",
+                        "are harvested"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "My mother told me she _______ very tired since she came back from a visit to our grandparents",
+                    "dapan": [
+                        "was",
+                        "had been",
+                        "is",
+                        "has been"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "Susan _______ her family after she had taken the university entrance examination.",
+                    "dapan": [
+                        "phoned",
+                        "had phoned",
+                        "phones",
+                        "is phoning"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "How many cities you and your uncle _______ by July last summer?",
+                    "dapan": [
+                        "visited",
+                        "had visited",
+                        "did you visit",
+                        "had you visited"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "Miss Jane _______ typing the report when her boss came in.",
+                    "dapan": [
+                        "didn’t finish",
+                        "hadn’t finished",
+                        "doesn’t finish ",
+                        "can’t finish"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "Peter was in New York last week; he _______ in Washington D.C. three days earlier.",
+                    "dapan": [
+                        "was",
+                        "had been",
+                        "is",
+                        "was being"
+                    ],
+                    "dapandung": "2"
+                },  {
+                    "cauhoi": "Three women, none of whom we _______ before, _______ out of the hall",
+                    "dapan": [
+                        "saw-had come",
+                        "had seen-came ",
+                        "saw-came",
+                        "had seen-had come"
+                    ],
+                    "dapandung": "2"
+                },  {
+                    "cauhoi": "They _______ through horrible times during the war years.",
+                    "dapan": [
+                        "lived",
+                        "had lived",
+                        "live",
+                        "are living"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "Sam didn't get much formal _______.",
+                    "dapan": [
+                        "school",
+                        "schooling",
+                        "schooldays",
+                        "schoolgirl"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "Wow! What a _______ your sister is! I couldn't get off the phone!",
+                    "dapan": [
+                        "talk ",
+                        "talking",
+                        "talker",
+                        "talkative"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "He'll be remembered both as a brilliant footballer and as a true _______.",
+                    "dapan": [
+                        "sport",
+                        "sporting",
+                        "sportsman",
+                        "sports car"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": " This season's _______ include five new plays and several concerts of Chinese and Indian music.",
+                    "dapan": [
+                        "entertainment",
+                        "entertainer",
+                        "to entertain ",
+                        "entertaining"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "She was a _______ child, happiest when reading.",
+                    "dapan": [
+                        "study",
+                        "studied ",
+                        "studious ",
+                        "studiously"
+                    ],
+                    "dapandung": "3"
+                },
+                {
+                    "cauhoi": "She seems to have spent all her life studying in _______ establishments.",
+                    "dapan": [
+                        "education",
+                        "educate",
+                        "educated",
+                        "educational"
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": " Space travel is one of the marvels wonders of modern _______.",
+                    "dapan": [
+                        "science",
+                        "scientific",
+                        "scientifically",
+                        "scientist"
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": "My computer makes a _______ low buzzing noise.",
+                    "dapan": [
+                        "continue",
+                        "continued",
+                        "continuing",
+                        "continuous"
+                    ],
+                    "dapandung": "4"
+                },
+                   {
+                    "cauhoi": "All her life she had a _______ trust in other people.",
+                    "dapan": [
+                        "child",
+                        "childlike",
+                        "childish",
+                        "childless"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "After he had spoken, a _______ silence fell on the room.",
+                    "dapan": [
+                        "die",
+                        "death",
+                        "deathly ",
+                        "deathless"
+                    ],
+                    "dapandung": "3"
                 }
             ]
         }
