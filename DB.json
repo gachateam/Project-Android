@@ -1,7 +1,7 @@
 {
     "unit": "Tìm từ đồng nghĩa" [
         {
-            "cau hoi 1": [
+            "cauhoi1": [
                 {
                     "cauhoi": "I didn’t think his the comments were very 'appropriate' at the time.",
                     "dapan": [
@@ -10,7 +10,7 @@
                         "exact",
                         "suitable"
                     ],
-                    "dapandung": "suitable"
+                    "dapandung": "4"
                 },
                 {
                     "cauhoi": "GCSE are not 'compulsory', but they are the most common qualifications taken by students",
@@ -20,7 +20,7 @@
                         "fulfilled     ",
                         "specialized"
                     ],
-                    "dapandung": "required"
+                    "dapandung": "1"
                 },
                   {
                     "cauhoi": "I received housing benefit when I was 'unemployed'.",
@@ -30,7 +30,7 @@
                         "out of work     ",
                         "out of practice"
                     ],
-                    "dapandung": "out of work     "
+                    "dapandung": "1"
                 },
                   {
                     "cauhoi": "The related publications are far too 'numerous' to list individually.",
@@ -40,7 +40,7 @@
                         "few",
                         "full"
                     ],
-                    "dapandung": "much"
+                    "dapandung": "1"
                 },
                   {
                     "cauhoi": "The teacher gave some 'suggestions' on what would come out for the examination.",
@@ -50,7 +50,7 @@
                         "effects",
                         "hints"
                     ],
-                    "dapandung": "hints"
+                    "dapandung": "4"
                 },
                   {
                     "cauhoi": "When being interviewed, you should 'concentrate' on what the interviewer is saying or asking you",
@@ -60,7 +60,7 @@
                         "impress on     ",
                         "pay attention to"
                     ],
-                    "dapandung": "pay attention to"
+                    "dapandung": "4"
                 },
                   {
                     "cauhoi": "She came to the meeting late 'on purpose' so she would miss the introductory speech.",
@@ -70,7 +70,7 @@
                         "reasonably ",
                         "with a goal"
                     ],
-                    "dapandung": "with a goal"
+                    "dapandung": "4"
                 },
                   {
                     "cauhoi": "The use of lasers in surgery has become 'relatively' commonplace in recent years",
@@ -80,7 +80,7 @@
                         "absolutely ",
                         "almost"
                     ],
-                    "dapandung": "comparatively "
+                    "dapandung": "1"
                 },  {
                     "cauhoi": "The first few days at university can be very 'daunting', but with determination and positive attitude, freshmen will soon fit in with the new environment.",
                     "dapan": [
@@ -89,7 +89,7 @@
                         "serious",
                         "depressing"
                     ],
-                    "dapandung": "depressing"
+                    "dapandung": "4"
                 },  {
                     "cauhoi": "Did anyone 'acknowledge' responsibility for the outbreak of the fire ?",
                     "dapan": [
@@ -98,7 +98,7 @@
                         "report",
                         "find out"
                     ],
-                    "dapandung": "accept "
+                    "dapandung": "2"
                 },
                   {
                     "cauhoi": " 'Childbearing' is the women's most wonderful role.",
@@ -108,47 +108,97 @@
                         "Educating a child",
                         "Having no child"
                     ],
-                    "dapandung": "Giving birth to a baby     "
+                    "dapandung": "1"
                 },
                 {
-                    "cauhoi": " ",
+                    "cauhoi": "In my experience, 'freshmen' today are different from those I knew 25 years ago",
                     "dapan": [
-                        "",
-                        "",
-                        "",
-                        ""
+                        "first-year students",
+                        "new students",
+                        "new counselors",
+                        "young professors"
                     ],
-                    "dapandung": " "
+                    "dapandung": "1"
                 },
                   {
-                    "cauhoi": " ",
+                    "cauhoi": "Mayo Hospital in New Orleans was so named in recognition of Dr. Mayo’s 'outstanding' humanitarianism.",
                     "dapan": [
-                        "",
-                        "",
-                        "",
-                        ""
+                        "unpopular",
+                        "widespread",
+                        "remarkable",
+                        "charitable"
                     ],
-                    "dapandung": " "
+                    "dapandung": "3"
                 },
                   {
-                    "cauhoi": " ",
+                    "cauhoi": " My parents’ warnings didn’t 'deter' me from choosing the job of my dreams.",
                     "dapan": [
-                        "",
-                        "",
-                        "",
-                        ""
+                        "influence",
+                        "discourage",
+                        "reassure",
+                        "inspire"
                     ],
-                    "dapandung": " "
+                    "dapandung": "2"
                 },
                   {
-                    "cauhoi": " ",
+                    "cauhoi": "“It’s no use talking to me about metaphysics. It’s a 'closed book to me'.”",
                     "dapan": [
-                        "",
-                        "",
-                        "",
-                        ""
+                        "a subject that I don’t understand",
+                        "a theme that I like to discuss",
+                        "a book that is never opened",
+                        "an object that I really love"
                     ],
-                    "dapandung": " "
+                    "dapandung": "1"
+                },
+                {
+                    "cauhoi": "Professor Berg was very interested in the 'diversity' of cultures all over the world.",
+                    "dapan": [
+                        "variety",
+                        "changes",
+                        "conservation",
+                        "number"
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": "The situation seems to be changing 'minute by minute'.",
+                    "dapan": [
+                        "again and again",
+                        "time after time",
+                        "very rapidly",
+                        "from time to time"
+                    ],
+                    "dapandung": "3"
+                },
+                                {
+                    "cauhoi": "If desired, 'garnish' your plate with parsley, bell pepper rings or other vegetables",
+                    "dapan": [
+                        "decorate",
+                        "replace",
+                        "associate",
+                        "provide"
+                    ],
+                    "dapandung": "1"
+                },
+                   {
+                    "cauhoi": "The bomb 'exploded' in the garage; fortunately no one hurt.",
+                    "dapan": [
+                        "taken off",
+                        "went off",
+                        "put on",
+                        "hold up"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "In times of war, the Red Cross is 'dedicated' to reducing the sufferings of wounded soldiers, civilians, and prisoners of war.",
+                    "dapan": [
+                        "initiated",
+                        "appalled",
+                        "devoted",
+                        "mounted"
+                    ],
+                    "dapandung": "3"
                 },
             ]
         }
