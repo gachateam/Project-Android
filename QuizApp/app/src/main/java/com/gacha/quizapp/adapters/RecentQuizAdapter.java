@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gacha.quizapp.Model.RecentQuiz;
+import com.gacha.quizapp.Model.RecentQuizzes;
 import com.gacha.quizapp.R;
 
 import java.util.ArrayList;
@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.MyViewHolder> {
     private Activity context;
     private int layoutID;
-    private ArrayList<RecentQuiz> list;
+    private ArrayList<RecentQuizzes> list;
 
-    public RecentQuizAdapter(Activity context, int layoutID, ArrayList<RecentQuiz> list) {
+    public RecentQuizAdapter(Activity context, int layoutID, ArrayList<RecentQuizzes> list) {
         this.context = context;
         this.layoutID = layoutID;
         this.list = list;

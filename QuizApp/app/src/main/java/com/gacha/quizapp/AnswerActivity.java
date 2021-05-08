@@ -6,31 +6,49 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AnswerActivity extends AppCompatActivity {
+import com.gacha.quizapp.Model.Quiz;
+import com.gacha.quizapp.Model.Unit;
 
+import java.util.ArrayList;
+
+public class AnswerActivity extends AppCompatActivity {
+    private Quiz quiz;
+    private ArrayList<CheckBox> cbs;
+    private Button button;
+    private Unit unit;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_questions);
 
-        CheckBox cbA = findViewById(R.id.checkA);
-        CheckBox cbB = findViewById(R.id.checkB);
-        CheckBox cbC = findViewById(R.id.checkC);
-        CheckBox cbD = findViewById(R.id.checkD);
+        cbs = new ArrayList<>();
 
-        Button button = findViewById(R.id.btnNext);
+        cbs.add(findViewById(R.id.checkA));
+        cbs.add(findViewById(R.id.checkB));
+        cbs.add(findViewById(R.id.checkC));
+        cbs.add(findViewById(R.id.checkD));
 
-        new CheckBoxGroup(cbA,cbB,cbC,cbD);
+        button = findViewById(R.id.btnNext);
 
-        button.setOnClickListener(onClickListener);
+        new CheckBoxGroup(cbs.get(0),cbs.get(1),cbs.get(2),cbs.get(3));
+
+        button.setOnClickListener(showResult);
+
     }
-    private final View.OnClickListener onClickListener = v -> {
+    private void setQuiz(){
+        for (int i = 0; i < cbs.size(); i++) {
+            cbs.get(i).setText(quiz.getAns().get(i));
+        }
+    }
+    private final View.OnClickListener quesNext = v->{
+
+    };
+    private final View.OnClickListener showResult = v -> {
         AlertDialog.Builder builder = new AlertDialog.Builder(AnswerActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
 

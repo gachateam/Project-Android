@@ -1,6 +1,6 @@
 package com.gacha.quizapp.Model;
 
-public class RecentQuiz {
+public class RecentQuizzes {
     private String quizName;
     private String quizDescription;
     private int quizId;
@@ -21,12 +21,12 @@ public class RecentQuiz {
         this.quizDescription = quizDescription;
     }
 
-    public RecentQuiz(String quizName, String quizDescription) {
+    public RecentQuizzes(String quizName, String quizDescription) {
         this.quizName = quizName;
         this.quizDescription = quizDescription;
     }
 
-    public RecentQuiz(String quizName, String quizDescription, int quizId) {
+    public RecentQuizzes(String quizName, String quizDescription, int quizId) {
         this.quizName = quizName;
         this.quizDescription = quizDescription;
         this.quizId = quizId;
