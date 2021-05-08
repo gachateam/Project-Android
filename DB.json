@@ -1,7 +1,9 @@
 {
-    "unit": "Tìm từ đồng nghĩa" [
+    "unit": [
         {
-            "cauhoi1": [
+            "name": "",
+            "description": "",
+            "cauhoi": [
                 {
                     "cauhoi": "I didn’t think his the comments were very 'appropriate' at the time.",
                     "dapan": [
@@ -199,7 +201,221 @@
                         "mounted"
                     ],
                     "dapandung": "3"
+                }
+            ]
+        },
+        {
+            "name": "",
+            "description": "Tìm câu cận nghĩa Tiếng Anh",
+            "cauhoi": [
+                {
+                    "cauhoi": "I have never been to Russia. I think I shall go there next year.” said Bill.",
+                    "dapan": [
+                        "Bill said that he had never been to Russia and he thought he would go there the next year.",
+                        "Bill said that he would have never been to Russia and he thinks he would go there the next year.",
+                        "Bill said that he had never been to Russia and he thinks he will go there the next year",
+                        "Bill said that he has never been to Russia and he thinks he would go there the next year"
+                    ],
+                    "dapandung": "2"
                 },
+                {
+                    "cauhoi": "People believed that Jane retired because of her poor health",
+                    "dapan": [
+                        "Jane is believed to have retired because of her poor health",
+                        "Jane was believed to have retired because of her poor health     ",
+                        "It is believed that Jane retired because of her poor health     ",
+                        "Jane retired because of her poor health was believed"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "The government knows the extent of the problem. The government needs to take action soon",
+                    "dapan": [
+                        "The government knows the extent of the problem whereas it needs to take action soon.",
+                        "The government knows the extent of the problem so that it needs to take action soon. ",
+                        "Knowing the extent of the problem, the government needs to take action soon.",
+                        "The government knows the extent of the problem, or else it needs to take action soon"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": "The substance is very toxic. Protective clothing must be worn at all times",
+                    "dapan": [
+                        "Since the substance is very toxic, so protective clothing must be worn at all times",
+                        "So toxic is the substance that protective clothing must be worn at all times.",
+                        "The substance is such toxic that protective clothing must be worn at all times",
+                        "The substance is too toxic to wear protective clothing at all times"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "John is studying hard. He doesn’t want to fail the exam",
+                    "dapan": [
+                        "John is studying hard in Oder not to fail the next exam",
+                        "John is studying hard in Oder that he not fail the next exam",
+                        "John is studying hard so as to fail the next exam",
+                        "hiJohn is studying hard in Oder to not to fail the next examnts"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "She gave in her notice. She planned to start her new job in January",
+                    "dapan": [
+                        "She gave in her notice, plan to start her new job in January    ",
+                        "She gave in her notice with a view to starting her new job in January",
+                        "Her notice was given in with an aim to start her new job in January ",
+                        "Her notice was given in order for her to start her new job in January"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "When the unemployment rate is high, the crime rate is usually also high.",
+                    "dapan": [
+                        "The unemployment rate and the crime rate are both higher. ",
+                        "The higher the unemployment rate is, the higher the crime rate is.",
+                        "The unemployment rate is as high as the crime rate ",
+                        "The high rate of unemployment depends on the high rate of crime."
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "I wish you hadn't said that",
+                    "dapan": [
+                        "I wish you not to say that ",
+                        "If only you didn't say tot",
+                        "I hope you will not say that. ",
+                        "It would be nice if you hadn’t said that"
+                    ],
+                    "dapandung": "4"
+                },  {
+                    "cauhoi": "The first few days at university can be very 'daunting', but with determination and positive attitude, freshmen will soon fit in with the new environment.",
+                    "dapan": [
+                        "interesting ",
+                        "memorable ",
+                        "serious",
+                        "depressing"
+                    ],
+                    "dapandung": "4"
+                },  {
+                    "cauhoi": "“You're always making terrible mistakes”, said the teacher.",
+                    "dapan": [
+                        "The teacher asked his students why they always made terrible mistakes ",
+                        "The teacher realized that his students always made terrible mistakes ",
+                        "The teacher complained about his students making terrible mistakes",
+                        "The teacher made his students not always make terrible mistakes"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": " There is no point in your phoning Jane – she’s away",
+                    "dapan": [
+                        "It would be a waste of time phoning Jane – she’s away",
+                        "You waste your time if you insist on phoning Jane – she’s away.",
+                        "Don’t spend your valuable time phoning Jane – she’s out.",
+                        "Jane is very difficult to phone – she’s always away"
+                    ],
+                    "dapandung": "1"
+                },
+                {
+                    "cauhoi": "We spend about one-third of our lives sleeping. We know relatively little about sleep.",
+                    "dapan": [
+                        "We know relatively little about sleep; as a result, we spend about one-third of our lives sleeping.",
+                        "We shall know more about sleep if we spend more than one-third of our lives sleeping",
+                        "Despite spending about one-third of our lives sleeping, we know relatively little about sleep.",
+                        "We spend about one-third of our lives sleeping so that we know relatively little about sleep"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": "Overeating is a cause of several deadly diseases. Physical inactivity is another cause of several deadly diseases.",
+                    "dapan": [
+                        "Not only overeating but also physical inactivity may lead to several deadly diseases.",
+                        "Apart from physical activities, eating too much also contributes to several deadly diseases.",
+                        "Both overeating and physical inactivity result from several deadly diseases.",
+                        "Overeating and physical inactivity are caused by several deadly diseases."
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": " 'Why don't we wear sunglasses?' our grandpa would say when we went out on bright sunny days.",
+                    "dapan": [
+                        "Our grandpa used to suggest wearing sunglasses when we went out on bright sunny days.",
+                        "Our grandpa would warn us against wearing sunglasses on bright sunny days.",
+                        "Our grandpa asked us why we did not wear sunglasses when going out on bright sunny days.",
+                        "Our grandpa reminded us of going out with sunglasses on bright sunny days."
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "I am sure he did not know that his brother graduated with flying colors.",
+                    "dapan": [
+                        "He should not have been envious of his brother's achievement.",
+                        "He cannot have known that his brother graduated with very high marks.",
+                        "That his brother graduated with flying colors must have been appreciated by him.",
+                        "He may not know that his brother is flying gradually up in a colorful balloon."
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "People say that Mr. Goldman gave nearly a million pounds to charity last year.",
+                    "dapan": [
+                        "Mr. Goldman is said to have given nearly a million pounds to charity last year.",
+                        "Mr. Goldman was said to have given nearly a million pounds to charity last year.",
+                        "Nearly a million pounds was said to have been given to charity by Mr. Goldman last year.",
+                        "Nearly a million pounds is said to be given to charity by Mr. Goldman last year."
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": "The boy was too fat to run far.",
+                    "dapan": [
+                        "The boy's fatness didn't stop him running far.",
+                        "The boy had to run a lot because he was fat.",
+                        "The boy became ill because he was too fat.",
+                        "The boy was very fat and couldn't run far."
+                    ],
+                    "dapandung": "4"
+                },
+                                {
+                    "cauhoi": "If he wrote to her, she would be happy.",
+                    "dapan": [
+                        "When he wrote to her, she wasn't happy.",
+                        "May be he'll write to her, and then she'll be happy.",
+                        "He doesn't write to her, so she isn't happy.",
+                        "She's happy because he has written to her."
+                    ],
+                    "dapandung": "3"
+                },
+                   {
+                    "cauhoi": "Would you mind waiting outside the office?",
+                    "dapan": [
+                        "Will you wait outside the office?",
+                        "Did you wait outside the office?",
+                        "Do you enjoy waiting outside the office?",
+                        "Did you see anyone waiting outside the office?"
+                    ],
+                    "dapandung": "1"
+                },
+                {
+                    "cauhoi": "The basketball team knew they lost the match. They soon started to blame each other.",
+                    "dapan": [
+                        "Hardly had the basketball team known they lost the match when they started to blame each other.",
+                        "No sooner had the basketball team started to blame each other than they knew they lost the match.",
+                        "As soon as they blamed each other, the basketball team knew they lost the match.",
+                        "Not only did the basketball team lose the match but they blamed each other as well."
+                    ],
+                    "dapandung": "1"
+                },
+                {
+                    "cauhoi": "The garage serviced my car last week.",
+                    "dapan": [
+                        "I got my car serviced last week.",
+                        "My car was to be serviced last week.",
+                        "The garage’s service to my car was good.",
+                        "Last week I went to the garage by cars."
+                    ],
+                    "dapandung": "1"
+                }
             ]
         }
     ]
