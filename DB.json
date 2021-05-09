@@ -1,6 +1,7 @@
 {
-    "unit": [
+    "TracNghiem": [
         {
+            "color": "green",
             "name": "",
             "description": "",
             "cauhoi": [
@@ -205,6 +206,7 @@
             ]
         },
         {
+            "color": "yellow",
             "name": "Tìm câu cận nghĩa Tiếng Anh",
             "description": "",
             "cauhoi": [
@@ -419,6 +421,7 @@
             ]
         },
         {
+            "color":"pink",
             "name": "trắc nghiệm Multiple Choice",
             "description": "",
             "cauhoi": [
@@ -619,6 +622,416 @@
                         "deathless"
                     ],
                     "dapandung": "3"
+                }
+            ]
+        },
+        {
+            "color": "blue",
+            "name": "trắc nghiệm Multiple Choice Nâng Cao",
+            "description": "",
+            "cauhoi": [
+                {
+                    "cauhoi": "I’m afraid very few people know about the concert and almost no one will come. If only the posters _____________ on time.",
+                    "dapan": [
+                        "were hanging",
+                        "were hung",
+                        "were hanged",
+                        "had been hung"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "Jimmy sent his mother a ___________ of flowers for her birthday.",
+                    "dapan": [
+                        "bar",
+                        "bunch",
+                        "pack",
+                        "packet"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "My plans to travel around the world have _________ through because I couldn‟t save enough money.",
+                    "dapan": [
+                        "fallen",
+                        "dropped",
+                        "given",
+                        "put"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "“I thought you bought a new fountain pen last week?” “Yes, I did but I left it at home. Can I borrow _____________ for a moment?”",
+                    "dapan": [
+                        "the one of you",
+                        "one of yours",
+                        "one pen of you",
+                        "the one of your pen"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "There are only a few minutes left, and the students is writing ________________.",
+                    "dapan": [
+                        "with a pressure",
+                        "under the pressure ",
+                        "to pressure",
+                        "under pressure"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "A little farther down the street _______________.",
+                    "dapan": [
+                        "is the inn I used to stay at",
+                        "there is an inn where I used to stay in",
+                        "the inn is the place where I used to stay",
+                        "is there an inn in which I used to stay"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "Remember to appreciate what your friends do for you. You shouldn’t take them ________.",
+                    "dapan": [
+                        "as a rule",
+                        "has usual",
+                        "out of habit",
+                        "for granted"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "“I wonder if you could help me?” - “______________”",
+                    "dapan": [
+                        "No, what is it? ",
+                        " Really? How nice",
+                        "Don’t mention it.",
+                        "I’ll do my best. What’s the problem?"
+                    ],
+                    "dapandung": "4"
+                },  {
+                    "cauhoi": "“ Don’t stay anywhere near the railway station at night. It’s dangerous.” - “_____________.”",
+                    "dapan": [
+                        "Ok. That will do.",
+                        "They won’t like it, I bet.",
+                        "I definitely won’t. Thank you.",
+                        " Where on Earth have you been?"
+                    ],
+                    "dapandung": "3"
+                },  {
+                    "cauhoi": "The opposition will be elected into government at the next election, without a ________ of a doubt.",
+                    "dapan": [
+                        "shade",
+                        "shadow ",
+                        "benefit ",
+                        "hue"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "She was ________ out of 115 applicants for the position of managing Director.",
+                    "dapan": [
+                        "short-changed",
+                        "short-listed",
+                        "shorted-sighted",
+                        "short-handed"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "It seems that the world record for this event is almost impossible to ________",
+                    "dapan": [
+                        "get ",
+                        "beat",
+                        "take",
+                        "achieve"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "The smell was so bad that it completely ________ us off our food.",
+                    "dapan": [
+                        "set",
+                        "took",
+                        "got",
+                        "put"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "He has been waiting for this letter for days, and at ________ it has come.",
+                    "dapan": [
+                        "last",
+                        "the end",
+                        "present",
+                        "the moment"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "It is ________opportunity to see African wildlife in its natural environment.",
+                    "dapan": [
+                        "an unique",
+                        "a unique ",
+                        "the unique ",
+                        "unique"
+                    ],
+                    "dapandung": "3"
+                },
+                {
+                    "cauhoi": "She seems to have spent all her life studying in _______ establishments.",
+                    "dapan": [
+                        "education",
+                        "educate",
+                        "educated",
+                        "educational"
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": " Space travel is one of the marvels wonders of modern _______.",
+                    "dapan": [
+                        "science",
+                        "scientific",
+                        "scientifically",
+                        "scientist"
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": "Peter and Thomas are talking about their mission. - Peter: “Is it important?” - Thomas: “________”",
+                    "dapan": [
+                        "Not on your life!",
+                        "It’s a matter of life and death!",
+                        "No worry, that’s nothing",
+                        "It’s ridiculous."
+                    ],
+                    "dapandung": "2"
+                },
+                   {
+                    "cauhoi": "Ann is asking Mathew’s opinion after biology class. - Ann: “Does the global warming worry you?” - Mathew: “________”",
+                    "dapan": [
+                        "What a shame!  ",
+                        "Oh, it’s hotter and hotter.",
+                        "I can’t bear to think about it.",
+                        " I don’t like hot weather."
+                    ],
+                    "dapandung": "3"
+                },
+                {
+                    "cauhoi": "Paul is a very _______ character, he is never relaxed with strangers.",
+                    "dapan": [
+                        "self-conscious ",
+                        "self-satisfied",
+                        "self-directed ",
+                        "self-confident"
+                    ],
+                    "dapandung": "1"
+                }
+            ]
+        },
+        {
+            "color": "red",
+            "name": "trắc nghiệm Tìm từ trái nghĩa",
+            "description": "",
+            "cauhoi": [
+                {
+                    "cauhoi": "Using Facebook, you can 'post' update sayings about your life every day.",
+                    "dapan": [
+                        "locate",
+                        "displace",
+                        "establish",
+                        "put up"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "We ought to keep these proposals 'secret' from the chairman for the time being.",
+                    "dapan": [
+                        "lively",
+                        "frequented",
+                        "accessible",
+                        "revealed"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "I have a 'modest' little glass fish tank where I keep a variety of small fish.",
+                    "dapan": [
+                        "moderate",
+                        "limited",
+                        "narrow",
+                        "large"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "The majority of people in the town strongly 'support' the plans to build a new school.",
+                    "dapan": [
+                        "in favour of",
+                        "refuse",
+                        "agree",
+                        "endanger"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "We offer a 'speedy' and secure service of transferring money in less than 24 hours.",
+                    "dapan": [
+                        "slow",
+                        "open",
+                        "unsure",
+                        "uninterested"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "She went to live in another state after the break-up of her 'marriage'",
+                    "dapan": [
+                        "loneliness",
+                        "anniversary",
+                        "celebrity",
+                        "divorce"
+                    ],
+                    "dapandung": "4"
+                },
+                  {
+                    "cauhoi": "Mr. Smith’s new neighbors appear to be very 'friendly'.",
+                    "dapan": [
+                        "amicable",
+                        "inapplicable",
+                        "hostile",
+                        "futile"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": "The Germany’s war hysteria has accounted for its people’s 'hostility' towards foreigners.",
+                    "dapan": [
+                        "disease",
+                        "ceremony",
+                        "malaria",
+                        "friendliness"
+                    ],
+                    "dapandung": "4"
+                },  {
+                    "cauhoi": "Population growth rates 'vary' among regions and even among countries within the same region.",
+                    "dapan": [
+                        "fluctuate",
+                        "stay unchanged",
+                        "restrain",
+                        "remain unstable"
+                    ],
+                    "dapandung": "2"
+                },  {
+                    "cauhoi": "I've put the cake on a 'high' shelf where he can't get at it.",
+                    "dapan": [
+                        "low",
+                        "learned",
+                        "lazy",
+                        "attentive"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": "She was always very 'hard-working' at school.",
+                    "dapan": [
+                        "studious",
+                        "short-listed",
+                        "shorted-sighted",
+                        "short-handed"
+                    ],
+                    "dapandung": "2"
+                },
+                {
+                    "cauhoi": "Certain courses are compulsory; others are 'optional' .",
+                    "dapan": [
+                        "voluntary",
+                        "pressure",
+                        "take",
+                        "achieve"
+                    ],
+                    "dapandung": "2"
+                },
+                  {
+                    "cauhoi": "She must be very 'strong' to carry such a weight on her back.",
+                    "dapan": [
+                        "weak",
+                        "musculous",
+                        "sick",
+                        "healthy"
+                    ],
+                    "dapandung": "1"
+                },
+                  {
+                    "cauhoi": "Barry seems 'happy' enough working for himself.",
+                    "dapan": [
+                        "funny",
+                        "satisfied",
+                        "upset ",
+                        "interested"
+                    ],
+                    "dapandung": "3"
+                },
+                  {
+                    "cauhoi": "The Red Cross is an international humanitarian agency dedicated to reducing the 'sufferings' of wounded soldiers, civilians and prisoners of war.",
+                    "dapan": [
+                        "worry and sadness",
+                        "pain and sorrow",
+                        "loss",
+                        "happiness"
+                    ],
+                    "dapandung": "4"
+                },
+                {
+                    "cauhoi": "You did a 'beautiful' thing in helping those poor children.",
+                    "dapan": [
+                        "meaningful",
+                        "good",
+                        "terrible",
+                        "positive"
+                    ],
+                    "dapandung": "3"
+                },
+                                {
+                    "cauhoi": "He is writing a book on the representation of 'woman' in medieval art.",
+                    "dapan": [
+                        "men",
+                        "female",
+                        "girl",
+                        "mother"
+                    ],
+                    "dapandung": "1"
+                },
+                                {
+                    "cauhoi": "In the first two decades of its existence, the cinema developed 'rapidly'.",
+                    "dapan": [
+                        "leisurely",
+                        "slowly",
+                        "weakly",
+                        "shortly"
+                    ],
+                    "dapandung": "2"
+                },
+                   {
+                    "cauhoi": "The earth is being 'threatened' and the future looks bad.",
+                    "dapan": [
+                        "done",
+                        "made",
+                        "protected",
+                        "varied"
+                    ],
+                    "dapandung": "3"
+                },
+                {
+                    "cauhoi": "I’d like to 'pay some money into' my bank account.",
+                    "dapan": [
+                        "withdraw some money from",
+                        "put some money into",
+                        "give some money out",
+                        "leave some money aside"
+                    ],
+                    "dapandung": "1"
                 }
             ]
         }
