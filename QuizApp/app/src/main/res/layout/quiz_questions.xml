@@ -22,14 +22,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <ImageButton
+                android:id="@+id/btn_prev"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:src="@drawable/ic_left_arrow"
                 app:tint="@color/white"
+                android:background="@color/blue"
                 android:contentDescription="@string/app_name" />
         </LinearLayout>
 

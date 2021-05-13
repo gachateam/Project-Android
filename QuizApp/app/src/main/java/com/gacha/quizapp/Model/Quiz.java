@@ -1,39 +1,43 @@
 package com.gacha.quizapp.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Quiz {
-    private String ques;
-    private ArrayList<String> ans;
-    private int ansTrue;
+public class Quiz implements Serializable {
+    private String cauhoi;
+    private ArrayList<String> dapan;
+    private String dapandung;
 
-    public String getQues() {
-        return ques;
+    public String getCauhoi() {
+        return cauhoi;
     }
 
-    public void setQues(String ques) {
-        this.ques = ques;
+    public void setCauhoi(String cauhoi) {
+        this.cauhoi = cauhoi;
     }
 
-    public ArrayList<String> getAns() {
-        return ans;
+    public ArrayList<String> getDapan() {
+        return dapan;
     }
 
-    public void setAns(ArrayList<String> ans) {
-        this.ans = ans;
+    public void setDapan(ArrayList<String> dapan) {
+        this.dapan = dapan;
     }
 
-    public int getAnsTrue() {
-        return ansTrue;
+    public String getDapandung() {
+        return dapandung;
     }
 
-    public void setAnsTrue(int ansTrue) {
-        this.ansTrue = ansTrue;
+    public void setDapandung(String dapandung) {
+        this.dapandung = dapandung;
     }
 
-    public Quiz(String ques, ArrayList<String> ans, int ansTrue) {
-        this.ques = ques;
-        this.ans = ans;
-        this.ansTrue = ansTrue;
+    public Quiz(String ques, ArrayList<String> ans, String ansTrue) {
+        this.cauhoi = ques;
+        this.dapan = ans;
+        this.dapandung = ansTrue;
+    }
+
+    public Quiz() {
     }
 }

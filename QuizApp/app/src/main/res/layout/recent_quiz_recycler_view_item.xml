@@ -38,7 +38,7 @@
         </LinearLayout>
 
         <android.widget.Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_start"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
