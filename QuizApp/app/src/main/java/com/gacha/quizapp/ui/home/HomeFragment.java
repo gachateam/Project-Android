@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment {
 
         //get firebase reference
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("unit");
+        DatabaseReference ref = database.getReference("TracNghiem");
 
         Query query = ref.limitToFirst(5);
         query.addValueEventListener(new ValueEventListener() {
@@ -74,7 +74,7 @@ public class HomeFragment extends Fragment {
                 ArrayList<Category> categories = new ArrayList<>();
                 ArrayList<RecentQuizzes> recentQuizzes = new ArrayList<>();
                 for (DataSnapshot data: snapshot.getChildren()){
-                    String name = data.child("name").getValue(String.class);
+                    String name = data.child("name").getValue(String.class);    
                     String description = data.child("description").getValue(String.class);
                     int colorValue = color.get(data.child("color").getValue(String.class));
                     categories.add(new Category(name,colorValue));

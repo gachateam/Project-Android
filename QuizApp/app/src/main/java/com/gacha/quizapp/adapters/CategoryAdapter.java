@@ -1,15 +1,18 @@
 package com.gacha.quizapp.adapters;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.gacha.quizapp.AnswerActivity;
 import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.R;
 
@@ -39,6 +42,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.category.setText(list.get(position).getCategory());
         holder.constraintLayout.setBackgroundColor(list.get(position).getColor());
+
     }
 
     @Override

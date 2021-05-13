@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/ScreenHome"
-        android:layout_weight="5">
+        android:layout_weight="6">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -27,7 +27,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/category_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,11 +46,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/textView4"
-                android:paddingLeft="30dp"
+                android:paddingStart="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/recent_quiz"

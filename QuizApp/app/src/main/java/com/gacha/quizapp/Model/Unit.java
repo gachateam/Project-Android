@@ -1,8 +1,9 @@
 package com.gacha.quizapp.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Unit {
+public class Unit implements Serializable {
     private String unitName;
     private ArrayList<Quiz> quizList;
     private String unitDescription;
@@ -35,5 +36,8 @@ public class Unit {
         this.unitName = unitName;
         this.quizList = quizList;
         this.unitDescription = unitDescription;
+    }
+
+    public Unit() {
     }
 }
