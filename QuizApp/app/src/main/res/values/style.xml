@@ -29,6 +29,6 @@
         <item name="android:layout_marginStart">10dp</item>
         <item name="android:width">380dp</item>
         <item name="android:button">@drawable/custom_check_box</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
 </resources>
