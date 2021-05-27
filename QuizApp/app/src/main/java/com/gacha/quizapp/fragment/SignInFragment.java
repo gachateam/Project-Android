@@ -1,5 +1,6 @@
 package com.gacha.quizapp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.gacha.quizapp.NavigationActivity;
 import com.gacha.quizapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -66,6 +68,7 @@ public class SignInFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(getActivity(), "Sign In successful", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getActivity(), NavigationActivity.class));
                         }else {
                             Toast.makeText(getActivity(), "Sign Up failed " + task.getException(), Toast.LENGTH_LONG).show();
                         }
