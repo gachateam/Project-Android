@@ -15,19 +15,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.gacha.quizapp.Model.Quiz;
-import com.gacha.quizapp.Model.Unit;
+import com.gacha.quizapp.Model.QuesMul;
 
 import java.util.ArrayList;
 
 public class AnswerActivity extends AppCompatActivity {
-    private Quiz quiz;
-    private ArrayList<CheckBox> cbs;
+    private ArrayList<QuesMul> quesMul;
     private Button buttonNext;
-    private ImageButton buttonPrev;
+    private ArrayList<CheckBox> cbs;
     private TextView textView;
-    private Unit unit;
+    private ImageButton imageButton;
     private int pos = 0;
+    private CheckBoxGroup checkBoxGroup;
 
     private static final String TAG = AnswerActivity.class.getSimpleName();
 
@@ -42,61 +41,46 @@ public class AnswerActivity extends AppCompatActivity {
         cbs.add(findViewById(R.id.checkB));
         cbs.add(findViewById(R.id.checkC));
         cbs.add(findViewById(R.id.checkD));
-        new CheckBoxGroup(cbs.get(0),cbs.get(1),cbs.get(2),cbs.get(3));
+        checkBoxGroup = new CheckBoxGroup(cbs.get(0), cbs.get(1), cbs.get(2), cbs.get(3));
         //get view
         textView = findViewById(R.id.question);
         buttonNext = findViewById(R.id.btnNext);
-        buttonPrev = findViewById(R.id.btn_prev);
+        imageButton = findViewById(R.id.btn_prev);
         //get Intent
         Intent intent = getIntent();
-        unit = (Unit) intent.getExtras().get("unit");
-
-        Log.d(TAG, "onCreate: "+unit.getQuizList().size());
-
-        showAns(unit.getQuizList().get(pos));
+        quesMul = (ArrayList<QuesMul>) intent.getExtras().get("ques");
 
         buttonNext.setOnClickListener(quesNext);
-        buttonPrev.setOnClickListener(quesPrev);
-
-
+        imageButton.setOnClickListener((v)->{
+            finish();
+        });
     }
 
-    private final View.OnClickListener quesNext = v->{
-        if ((pos+1)==unit.getQuizList().size()){
+    private final View.OnClickListener quesNext = v -> {
+        if ((pos + 2) == quesMul.size()) {
             String submit = "submit";
             buttonNext.setText(submit);
             check();
             return;
         }
-        pos = pos>unit.getQuizList().size()?0:pos+1;
-        if (pos<unit.getQuizList().size()){
-            showAns(unit.getQuizList().get(pos));
-        }
-    };
-    private final View.OnClickListener quesPrev = v->{
-        if (pos==unit.getQuizList().size()){
-            String submit = "submit";
-            buttonNext.setText(submit);
-            check();
-            return;
-        }
-        pos = pos<unit.getQuizList().size()?unit.getQuizList().size():pos-1;
-        showAns(unit.getQuizList().get(pos));
+        showAns(quesMul.get(++pos));
+        checkBoxGroup.setDefault();
     };
 
-    public void check(){
-        Log.d(TAG, "check: "+(pos+1));
-        if ((pos+1)==unit.getQuizList().size()){
+    public void check() {
+        Log.d(TAG, "check: " + (pos+2));
+        if ((pos + 2) == quesMul.size()) {
             buttonNext.setOnClickListener(showResult);
         }
     }
 
-    private void showAns(Quiz quiz){
-        textView.setText(quiz.getCauhoi());
+    private void showAns(QuesMul quesMul) {
+        textView.setText(quesMul.getQues());
         for (int i = 0; i < cbs.size(); i++) {
-            cbs.get(i).setText(quiz.getDapan().get(i));
+            cbs.get(i).setText(quesMul.getAns().get(i));
         }
     }
+
     public View.OnClickListener showResult = v -> {
         AlertDialog.Builder builder = new AlertDialog.Builder(AnswerActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);

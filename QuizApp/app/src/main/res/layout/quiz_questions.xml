@@ -52,6 +52,7 @@
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
+    
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/questionView"
         android:layout_width="match_parent"

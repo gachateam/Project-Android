@@ -15,8 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gacha.quizapp.AnswerActivity;
 import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.R;
+import com.gacha.quizapp.StartActivity;
+import com.gacha.quizapp.ui.home.HomeFragment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
 
@@ -34,15 +38,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View itemView = inflater.inflate(layoutID,parent,false);
+        View itemView = inflater.inflate(layoutID, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.category.setText(list.get(position).getCategory());
-        holder.constraintLayout.setBackgroundColor(list.get(position).getColor());
-
+        ArrayList<Integer> color = new ArrayList<>();
+        color.add(context.getResources().getColor(R.color.black));
+        color.add(context.getResources().getColor(R.color.blue));
+        color.add(context.getResources().getColor(R.color.colorPrimary));
+        color.add(context.getResources().getColor(R.color.colorPrimaryDark));
+        holder.constraintLayout.setBackgroundColor(color.get((new Random()).nextInt(4)));
     }
 
     @Override

@@ -11,22 +11,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gacha.quizapp.AnswerActivity;
-import com.gacha.quizapp.Model.RecentQuizzes;
+import com.gacha.quizapp.Model.QuesMul;
+import com.gacha.quizapp.Model.Unit;
 import com.gacha.quizapp.R;
 import com.gacha.quizapp.StartQuizActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.MyViewHolder> {
     private Activity context;
     private int layoutID;
-    private ArrayList<RecentQuizzes> list;
+    private ArrayList<Unit> list;
+    private ArrayList<QuesMul> listQues;
 
-    public RecentQuizAdapter(Activity context, int layoutID, ArrayList<RecentQuizzes> list) {
+    public RecentQuizAdapter(Activity context, int layoutID, ArrayList<Unit> list, ArrayList<QuesMul> listQues) {
         this.context = context;
         this.layoutID = layoutID;
         this.list = list;
+        this.listQues = listQues;
     }
 
     @NonNull
@@ -39,14 +42,30 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.quizName.setText(list.get(position).getQuizName());
-        holder.quizDescription.setText(list.get(position).getQuizDescription());
+        holder.quizName.setText(list.get(position).getName());
+        holder.quizDescription.setText(list.get(position).getDescription());
         holder.start.setOnClickListener(v -> {
             Intent intent = new Intent(context, StartQuizActivity.class);
-            intent.putExtra("quizName",list.get(position).getQuizName());
-            intent.putExtra("quizDescription",list.get(position).getQuizDescription());
+            intent.putExtra("name",list.get(position).getName());
+            intent.putExtra("description",list.get(position).getDescription());
+            intent.putExtra("ques",getQuesList(list.get(position).getQues()));
             context.startActivity(intent);
         });
+    }
+
+    private ArrayList<QuesMul> getQuesList(ArrayList<Integer> listQues){
+        ArrayList<QuesMul> quesMul = new ArrayList<>();
+
+        for (Integer quesId : listQues) {
+            for (QuesMul quesMu : this.listQues) {
+                if (quesMu.getId() == quesId){
+                    quesMul.add(quesMu);
+                    break;
+                }
+            }
+        }
+
+        return quesMul;
     }
 
     @Override

@@ -4,40 +4,49 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Unit implements Serializable {
-    private String unitName;
-    private ArrayList<Quiz> quizList;
-    private String unitDescription;
+    private String name;
+    private ArrayList<Integer> ques;
+    private String description;
 
-    public ArrayList<Quiz> getQuizList() {
-        return quizList;
+    public ArrayList<Integer> getQues() {
+        return ques;
     }
 
-    public void setQuizList(ArrayList<Quiz> quizList) {
-        this.quizList = quizList;
+    public void setQues(ArrayList<Integer> ques) {
+        this.ques = ques;
     }
 
-    public String getUnitName() {
-        return unitName;
+    public String getName() {
+        return name;
     }
 
-    public void setUnitName(String unitName) {
-        this.unitName = unitName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUnitDescription() {
-        return unitDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setUnitDescription(String unitDescription) {
-        this.unitDescription = unitDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Unit(String unitName, ArrayList<Quiz> quizList, String unitDescription) {
-        this.unitName = unitName;
-        this.quizList = quizList;
-        this.unitDescription = unitDescription;
+    public Unit(String unitName, ArrayList<Integer> quizList, String unitDescription) {
+        this.name = unitName;
+        this.ques = quizList;
+        this.description = unitDescription;
     }
 
     public Unit() {
+    }
+
+    @Override
+    public String toString() {
+        return "Unit{" +
+                "name='" + name + '\'' +
+                ", ques=" + ques +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
