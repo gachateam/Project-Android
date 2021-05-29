@@ -16,6 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,7 +30,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class SignInActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private Button btnFb, btnGg;
+    private Button btnGg;
     private GoogleSignInClient googleSignInClient;
     private FirebaseAuth firebaseAuth;
     private int RC_SIGN_IN = 1;
@@ -41,8 +42,9 @@ public class SignInActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager2);
-        btnFb = findViewById(R.id.button4);
+//        btnFb = findViewById(R.id.button4);
         btnGg = findViewById(R.id.button5);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"));
         tabLayout.addTab(tabLayout.newTab().setText("Sign Up"));
@@ -97,25 +99,25 @@ public class SignInActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount acc = task.getResult(ApiException.class);
-                Toast.makeText(getApplicationContext(), "Sign In Successfully", Toast.LENGTH_LONG).show();
-                firebaseGoogleAuth(acc);
+                Toast.makeText(SignInActivity.this, "Sign In Successfully", Toast.LENGTH_LONG).show();
+                firebaseGoogleAuth(acc.getIdToken());
             } catch (ApiException e){
-                Toast.makeText(getApplicationContext(), "Error" + e.getMessage() ,Toast.LENGTH_LONG).show();
+                Toast.makeText(SignInActivity.this, "Error" + e.getMessage() ,Toast.LENGTH_LONG).show();
             }
         }
     }
 
-    private void firebaseGoogleAuth(GoogleSignInAccount idToken) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken.getIdToken(), null);
+    private void firebaseGoogleAuth(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
                         } else {
-                            Toast.makeText(getApplicationContext(), "Errorx2", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignInActivity.this, "Errorx2", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
