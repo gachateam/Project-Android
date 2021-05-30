@@ -3,6 +3,7 @@ package com.gacha.quizapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -10,6 +11,7 @@ import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMul;
 import com.gacha.quizapp.Model.QuesListen;
+import com.gacha.quizapp.Model.QuesMulImage;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.Model.Unit;
 import com.google.firebase.database.DataSnapshot;
@@ -56,18 +58,24 @@ public class StartActivity extends AppCompatActivity {
                         listQues.add(data.getValue(QuesListen.class));
                     }else if (type == Ques.TYPE_SPEAK){
                         listQues.add(data.getValue(QuesSpeak.class));
+                    }else if (type == Ques.TYPE_MUL_QUES_IMAGE){
+                        listQues.add(data.getValue(QuesMulImage.class));
                     }
                 }
                 for (DataSnapshot data : snapshot.child("unit").getChildren()) {
                     listUnit.add(data.getValue(Unit.class));
                 }
 
-//                Intent intent = new Intent(StartActivity.this,NavigationActivity.class);
-//                intent.putExtra("listCategory",listCategory);
-//                intent.putExtra("listQues",listQues);
-//                intent.putExtra("listUnit",listUnit);
-//                StartActivity.this.startActivity(intent);
-//                finish();
+                for(Ques ques: listQues) {
+                    Log.d(TAG, "onDataChange: "+ques);
+                }
+
+                Intent intent = new Intent(StartActivity.this,NavigationActivity.class);
+                intent.putExtra("listCategory",listCategory);
+                intent.putExtra("listQues",listQues);
+                intent.putExtra("listUnit",listUnit);
+                StartActivity.this.startActivity(intent);
+                finish();
             }
 
             @Override

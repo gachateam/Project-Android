@@ -41,11 +41,9 @@ public class QuesMulImage extends Ques implements Serializable {
     }
 
     public QuesMulImage(int id,int ansC, int category, String ques, int type, ArrayList<AnsImage> ans) {
-        this.id = id;
+        super(type,id,category);
         this.ansC = ansC;
-        this.category = category;
         this.ques = ques;
-        this.type = type;
         this.ans = ans;
     }
 

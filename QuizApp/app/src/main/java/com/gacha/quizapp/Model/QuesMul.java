@@ -44,11 +44,9 @@ public class QuesMul extends Ques implements Serializable {
     }
 
     public QuesMul(int id,int ansC, int category, String ques, int type, ArrayList<String> ans) {
-        this.id = id;
+        super(type,id,category);
         this.ansC = ansC;
-        this.category = category;
         this.ques = ques;
-        this.type = type;
         this.ans = ans;
     }
 

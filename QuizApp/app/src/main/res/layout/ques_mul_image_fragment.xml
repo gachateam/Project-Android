@@ -57,6 +57,7 @@
                         tools:ignore="ContentDescription"/>
 
                     <TextView
+                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/quesA"/>
@@ -90,6 +91,7 @@
                         tools:ignore="ContentDescription"/>
 
                     <TextView
+                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/quesA"/>
@@ -130,6 +132,7 @@
                         tools:ignore="ContentDescription"/>
 
                     <TextView
+                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/quesA"/>
@@ -162,6 +165,7 @@
                         tools:ignore="ContentDescription"/>
 
                     <TextView
+                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/quesA"/>

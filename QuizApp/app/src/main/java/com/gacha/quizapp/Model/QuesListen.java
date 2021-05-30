@@ -16,13 +16,12 @@ public class QuesListen extends Ques implements Serializable {
     }
 
     public QuesListen(String ques, int id, int category, int type) {
+        super(type,id,category);
         this.ques = ques;
-        this.id = id;
-        this.category = category;
-        this.type = type;
     }
 
     public QuesListen() {
+        super();
     }
 
     @NonNull

@@ -2,6 +2,7 @@ package com.gacha.quizapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMul;
 import com.gacha.quizapp.Model.Unit;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +38,10 @@ public class StartQuizActivity extends AppCompatActivity {
 
         String unitName = intent.getExtras().get("name").toString();
         String unitDescription = intent.getExtras().get("description").toString();
-        ArrayList<QuesMul> quesMul = (ArrayList<QuesMul>) intent.getExtras().get("ques");
+        ArrayList<Ques> quesMul = (ArrayList<Ques>) intent.getExtras().get("ques");
+
+        Log.d(TAG, "onCreate: "+quesMul.size());
+
         name.setText(unitName);
         description.setText(unitDescription);
 

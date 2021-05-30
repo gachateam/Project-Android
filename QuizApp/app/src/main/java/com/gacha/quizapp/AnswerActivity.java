@@ -1,5 +1,6 @@
 package com.gacha.quizapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -32,13 +33,9 @@ import com.gacha.quizapp.fragments.QuesSpeakFragment;
 import java.util.ArrayList;
 
 public class AnswerActivity extends AppCompatActivity {
-    private ArrayList<QuesMul> quesMul;
     private Button buttonNext;
-    private ArrayList<CheckBox> cbs;
-    private TextView textView;
     private ImageButton imageButton;
-    private int questionID = 1;
-    private CheckBoxGroup checkBoxGroup;
+    private int questionID = 0;
     private FragmentTransaction fragmentTransaction;
     private AbstractFragment fragment;
     private ArrayList<Ques> listQues;
@@ -50,27 +47,31 @@ public class AnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_questions);
 
-        ArrayList<String> ansC = new ArrayList<>();
-        ansC.add("123");
-        ansC.add("123");
-        ansC.add("123");
-        ansC.add("123");
-        QuesMul quesMul = new QuesMul(1, 2, 1, "test", 1, ansC);
-        QuesMulImage quesMulImage = new QuesMulImage();
-        QuesSpeak quesSpeak = new QuesSpeak();
-        QuesListen quesListen = new QuesListen();
-
-        listQues = new ArrayList<>();
-
-        listQues.add(quesMul);
-        listQues.add(quesMulImage);
-        listQues.add(quesListen);
-        listQues.add(quesSpeak);
-
-        Log.d(TAG, "onCreate: "+(listQues.get(questionID) instanceof QuesMulImage));
+        Intent intent = getIntent();
+        listQues = (ArrayList<Ques>) intent.getExtras().get("ques");
 
         updateUI();
 
+        //get ui
+        buttonNext = findViewById(R.id.btnNext);
+        imageButton = findViewById(R.id.btn_prev);
+
+        //set onclick button back screen
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
+
+        //set onclick next question
+        buttonNext.setOnClickListener(v -> {
+            questionID++;
+            if (questionID < listQues.size()) {
+                updateUI();
+            }
+            if (questionID > listQues.size() - 2) {
+                ((Button) v).setText("Submit");
+                ((Button) v).setOnClickListener(showResult);
+            }
+        });
 
 
         //create check box group
@@ -95,7 +96,7 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-        Fragment f = getSupportFragmentManager().findFragmentByTag(1 + "");
+        Fragment f = getSupportFragmentManager().findFragmentByTag(questionID + "");
         if (listQues.get(questionID) instanceof QuesListen) {
             fragment = f != null ? (QuesListenFragment) f : new QuesListenFragment();
         } else if (listQues.get(questionID) instanceof QuesMul) {
@@ -112,31 +113,6 @@ public class AnswerActivity extends AppCompatActivity {
             fragmentTransaction.addToBackStack(questionID + "");
         }
         fragmentTransaction.commit();
-    }
-
-    private final View.OnClickListener quesNext = v -> {
-        if ((questionID + 2) == quesMul.size()) {
-            String submit = "submit";
-            buttonNext.setText(submit);
-            check();
-            return;
-        }
-        showAns(quesMul.get(++questionID));
-        checkBoxGroup.setDefault();
-    };
-
-    public void check() {
-        Log.d(TAG, "check: " + (questionID + 2));
-        if ((questionID + 2) == quesMul.size()) {
-            buttonNext.setOnClickListener(showResult);
-        }
-    }
-
-    private void showAns(QuesMul quesMul) {
-        textView.setText(quesMul.getQues());
-        for (int i = 0; i < cbs.size(); i++) {
-            cbs.get(i).setText(quesMul.getAns().get(i));
-        }
     }
 
     public View.OnClickListener showResult = v -> {

@@ -1,8 +1,8 @@
 package com.gacha.quizapp.Model;
 
-import androidx.fragment.app.Fragment;
+import java.io.Serializable;
 
-public abstract class Ques {
+public abstract class Ques implements Serializable {
     protected int type;
     protected int id;
     protected int category;
@@ -12,11 +12,11 @@ public abstract class Ques {
     public static int TYPE_SPEAK = 3;
     public static int TYPE_MUL_QUES_IMAGE = 4;
 
-    public int getQuesId() {
+    public int getId() {
         return id;
     }
 
-    public void setQuesId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -36,4 +36,13 @@ public abstract class Ques {
     }
 
     public abstract int getPoint();
+
+    public Ques(int type, int id, int category) {
+        this.type = type;
+        this.id = id;
+        this.category = category;
+    }
+
+    public Ques() {
+    }
 }

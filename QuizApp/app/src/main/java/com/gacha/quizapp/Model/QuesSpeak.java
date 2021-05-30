@@ -16,10 +16,8 @@ public class QuesSpeak extends Ques implements Serializable {
     }
 
     public QuesSpeak(String ques, int id, int category,int type) {
+        super(type,id,category);
         this.ques = ques;
-        this.id = id;
-        this.category = category;
-        this.type = type;
     }
 
     public QuesSpeak() {

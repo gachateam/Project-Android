@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity android:name=".NavigationActivity" />
-        <activity android:name=".AnswerActivity" android:noHistory="true">
+        <activity android:name=".StartActivity" android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StartActivity" />
+        <activity android:name=".AnswerActivity" />
         <activity android:name=".StartQuizActivity" />
     </application>
 
