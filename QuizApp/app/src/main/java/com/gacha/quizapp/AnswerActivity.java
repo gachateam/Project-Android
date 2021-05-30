@@ -37,7 +37,7 @@ public class AnswerActivity extends AppCompatActivity {
     private ArrayList<CheckBox> cbs;
     private TextView textView;
     private ImageButton imageButton;
-    private int questionID = 2;
+    private int questionID = 1;
     private CheckBoxGroup checkBoxGroup;
     private FragmentTransaction fragmentTransaction;
     private AbstractFragment fragment;
@@ -67,15 +67,10 @@ public class AnswerActivity extends AppCompatActivity {
         listQues.add(quesListen);
         listQues.add(quesSpeak);
 
+        Log.d(TAG, "onCreate: "+(listQues.get(questionID) instanceof QuesMulImage));
+
         updateUI();
 
-//        Fragment f = getSupportFragmentManager().findFragmentByTag(1 + "");
-//        fragment = f != null ? (QuesMulFragment) f : new QuesMulFragment();
-//        fragment.setQuestion(quesMul);
-//        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        fragmentTransaction.replace(R.id.ques_fragment, fragment, 1 + "");
-////        fragmentTransaction.addToBackStack(1 + "");
-//        fragmentTransaction.commit();
 
 
         //create check box group

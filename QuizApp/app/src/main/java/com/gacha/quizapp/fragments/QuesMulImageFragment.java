@@ -25,6 +25,6 @@ public class QuesMulImageFragment extends AbstractFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.ques_mul_image_fragment,container,false);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
     }
 }
