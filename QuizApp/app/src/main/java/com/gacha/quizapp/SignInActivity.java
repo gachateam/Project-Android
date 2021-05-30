@@ -2,11 +2,9 @@ package com.gacha.quizapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -16,15 +14,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class SignInActivity extends AppCompatActivity {
@@ -79,12 +73,7 @@ public class SignInActivity extends AppCompatActivity {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        btnGg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
+        btnGg.setOnClickListener(v -> signIn());
     }
 
     private void signIn() {
@@ -110,15 +99,12 @@ public class SignInActivity extends AppCompatActivity {
     private void firebaseGoogleAuth(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         firebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()){
 //                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
-                        } else {
-                            Toast.makeText(SignInActivity.this, "Errorx2", Toast.LENGTH_LONG).show();
-                        }
+                        startActivity(new Intent(SignInActivity.this, StartActivity.class));
+                    } else {
+                        Toast.makeText(SignInActivity.this, "ErrorX2", Toast.LENGTH_LONG).show();
                     }
                 });
     }
