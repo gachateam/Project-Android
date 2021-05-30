@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.gacha.quizapp.fragment.SignInFragment;
-import com.gacha.quizapp.fragment.SignUpFragment;
+import com.gacha.quizapp.fragments.SignInFragment;
+import com.gacha.quizapp.fragments.SignUpFragment;
 
 public class SignInAdapter extends FragmentPagerAdapter {
     private Context context;

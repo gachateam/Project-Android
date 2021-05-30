@@ -35,4 +35,9 @@ public class QuesSpeak extends Ques implements Serializable {
                 ", type=" + type +
                 '}';
     }
+
+    @Override
+    public int getPoint() {
+        return 0;
+    }
 }

@@ -63,9 +63,6 @@ public class StartActivity extends AppCompatActivity {
                     listUnit.add(data.getValue(Unit.class));
                 }
 
-                for (Ques ques : listQues) {
-                    Log.d(TAG, "onDataChange: " + ques);
-                }
 //                Intent intent = new Intent(StartActivity.this,NavigationActivity.class);
 //                intent.putExtra("listCategory",listCategory);
 //                intent.putExtra("listQues",listQues);

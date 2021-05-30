@@ -1,5 +1,7 @@
 package com.gacha.quizapp.Model;
 
+import androidx.fragment.app.Fragment;
+
 public abstract class Ques {
     protected int type;
     protected int id;
@@ -8,12 +10,13 @@ public abstract class Ques {
     public static int TYPE_MUL_QUES = 1;
     public static int TYPE_READ = 2;
     public static int TYPE_SPEAK = 3;
+    public static int TYPE_MUL_QUES_IMAGE = 4;
 
-    public int getId() {
+    public int getQuesId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setQuesId(int id) {
         this.id = id;
     }
 
@@ -31,4 +34,6 @@ public abstract class Ques {
     public void setType(int type) {
         this.type = type;
     }
+
+    public abstract int getPoint();
 }

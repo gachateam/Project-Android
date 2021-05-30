@@ -58,7 +58,7 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
 
         for (Integer quesId : listQues) {
             for (QuesMul quesMu : this.listQues) {
-                if (quesMu.getId() == quesId){
+                if (quesMu.getQuesId() == quesId){
                     quesMul.add(quesMu);
                     break;
                 }

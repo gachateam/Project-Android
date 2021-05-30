@@ -3,10 +3,15 @@ package com.gacha.quizapp.Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class QuesMul extends Ques implements Serializable {
+public class QuesMulImage extends Ques implements Serializable {
+    static class AnsImage
+    {
+        public String image;
+        public String ans;
+    };
     private int ansC;
     private String ques;
-    private ArrayList<String> ans;
+    private ArrayList<AnsImage> ans;
 
     public int getAnsC() {
         return ansC;
@@ -14,14 +19,6 @@ public class QuesMul extends Ques implements Serializable {
 
     public void setAnsC(int ansC) {
         this.ansC = ansC;
-    }
-
-    public int getCategory() {
-        return category;
-    }
-
-    public void setCategory(int category) {
-        this.category = category;
     }
 
     public String getQues() {
@@ -32,18 +29,18 @@ public class QuesMul extends Ques implements Serializable {
         this.ques = ques;
     }
 
-    public ArrayList<String> getAns() {
+    public ArrayList<AnsImage> getAns() {
         return ans;
     }
 
-    public void setAns(ArrayList<String> ans) {
+    public void setAns(ArrayList<AnsImage> ans) {
         this.ans = ans;
     }
 
-    public QuesMul() {
+    public QuesMulImage() {
     }
 
-    public QuesMul(int id,int ansC, int category, String ques, int type, ArrayList<String> ans) {
+    public QuesMulImage(int id,int ansC, int category, String ques, int type, ArrayList<AnsImage> ans) {
         this.id = id;
         this.ansC = ansC;
         this.category = category;
