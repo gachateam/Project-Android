@@ -31,13 +31,6 @@ public class QuesMulFragment extends AbstractFragment {
         this.quesMul = (QuesMul) question;
     }
 
-    @Override
-    public void updateUserInteraction(ArrayList<Ques> listQues, int questionID) {
-        for (String ans : ((QuesMul) listQues.get(questionID)).getAns()) {
-
-        }
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

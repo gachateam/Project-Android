@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
-public class QuesRead extends Ques implements Serializable {
+public class QuesListen extends Ques implements Serializable {
     private String ques;
 
     public String getQues() {
@@ -15,14 +15,14 @@ public class QuesRead extends Ques implements Serializable {
         this.ques = ques;
     }
 
-    public QuesRead(String ques, int id, int category,int type) {
+    public QuesListen(String ques, int id, int category, int type) {
         this.ques = ques;
         this.id = id;
         this.category = category;
         this.type = type;
     }
 
-    public QuesRead() {
+    public QuesListen() {
     }
 
     @NonNull

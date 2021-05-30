@@ -3,14 +3,13 @@ package com.gacha.quizapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMul;
-import com.gacha.quizapp.Model.QuesRead;
+import com.gacha.quizapp.Model.QuesListen;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.Model.Unit;
 import com.google.firebase.database.DataSnapshot;
@@ -54,7 +53,7 @@ public class StartActivity extends AppCompatActivity {
                     if ((type = data.child("type").getValue(Integer.class)) == Ques.TYPE_MUL_QUES) {
                         listQues.add(data.getValue(QuesMul.class));
                     }else if(type == Ques.TYPE_READ){
-                        listQues.add(data.getValue(QuesRead.class));
+                        listQues.add(data.getValue(QuesListen.class));
                     }else if (type == Ques.TYPE_SPEAK){
                         listQues.add(data.getValue(QuesSpeak.class));
                     }

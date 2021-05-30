@@ -1,6 +1,5 @@
 package com.gacha.quizapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -19,19 +18,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.Model.Ques;
+import com.gacha.quizapp.Model.QuesListen;
 import com.gacha.quizapp.Model.QuesMul;
-import com.gacha.quizapp.Model.QuesRead;
+import com.gacha.quizapp.Model.QuesMulImage;
 import com.gacha.quizapp.Model.QuesSpeak;
-import com.gacha.quizapp.Model.Unit;
 import com.gacha.quizapp.fragments.AbstractFragment;
+import com.gacha.quizapp.fragments.QuesListenFragment;
 import com.gacha.quizapp.fragments.QuesMulFragment;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.gacha.quizapp.fragments.QuesMulImageFragment;
+import com.gacha.quizapp.fragments.QuesSpeakFragment;
 
 import java.util.ArrayList;
 
@@ -41,10 +37,11 @@ public class AnswerActivity extends AppCompatActivity {
     private ArrayList<CheckBox> cbs;
     private TextView textView;
     private ImageButton imageButton;
-    private int pos = 0;
+    private int questionID = 2;
     private CheckBoxGroup checkBoxGroup;
     private FragmentTransaction fragmentTransaction;
     private AbstractFragment fragment;
+    private ArrayList<Ques> listQues;
 
     private static final String TAG = AnswerActivity.class.getSimpleName();
 
@@ -58,15 +55,27 @@ public class AnswerActivity extends AppCompatActivity {
         ansC.add("123");
         ansC.add("123");
         ansC.add("123");
-        QuesMul quesMul = new QuesMul(1,2,1,"test",1,ansC);
+        QuesMul quesMul = new QuesMul(1, 2, 1, "test", 1, ansC);
+        QuesMulImage quesMulImage = new QuesMulImage();
+        QuesSpeak quesSpeak = new QuesSpeak();
+        QuesListen quesListen = new QuesListen();
 
-        Fragment f = getSupportFragmentManager().findFragmentByTag(1 + "");
-        fragment = f != null ? (QuesMulFragment) f : new QuesMulFragment();
-        fragment.setQuestion(quesMul);
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.ques_fragment, fragment, 1 + "");
-//        fragmentTransaction.addToBackStack(1 + "");
-        fragmentTransaction.commit();
+        listQues = new ArrayList<>();
+
+        listQues.add(quesMul);
+        listQues.add(quesMulImage);
+        listQues.add(quesListen);
+        listQues.add(quesSpeak);
+
+        updateUI();
+
+//        Fragment f = getSupportFragmentManager().findFragmentByTag(1 + "");
+//        fragment = f != null ? (QuesMulFragment) f : new QuesMulFragment();
+//        fragment.setQuestion(quesMul);
+//        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction.replace(R.id.ques_fragment, fragment, 1 + "");
+////        fragmentTransaction.addToBackStack(1 + "");
+//        fragmentTransaction.commit();
 
 
         //create check box group
@@ -90,20 +99,40 @@ public class AnswerActivity extends AppCompatActivity {
 //        });
     }
 
+    private void updateUI() {
+        Fragment f = getSupportFragmentManager().findFragmentByTag(1 + "");
+        if (listQues.get(questionID) instanceof QuesListen) {
+            fragment = f != null ? (QuesListenFragment) f : new QuesListenFragment();
+        } else if (listQues.get(questionID) instanceof QuesMul) {
+            fragment = f != null ? (QuesMulFragment) f : new QuesMulFragment();
+        } else if (listQues.get(questionID) instanceof QuesMulImage) {
+            fragment = f != null ? (QuesMulImageFragment) f : new QuesMulImageFragment();
+        } else if (listQues.get(questionID) instanceof QuesSpeak) {
+            fragment = f != null ? (QuesSpeakFragment) f : new QuesSpeakFragment();
+        }
+        fragment.setQuestion(listQues.get(questionID));
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.ques_fragment, fragment, questionID + "");
+        if (getSupportFragmentManager().findFragmentByTag(questionID + "") == null) {
+            fragmentTransaction.addToBackStack(questionID + "");
+        }
+        fragmentTransaction.commit();
+    }
+
     private final View.OnClickListener quesNext = v -> {
-        if ((pos + 2) == quesMul.size()) {
+        if ((questionID + 2) == quesMul.size()) {
             String submit = "submit";
             buttonNext.setText(submit);
             check();
             return;
         }
-        showAns(quesMul.get(++pos));
+        showAns(quesMul.get(++questionID));
         checkBoxGroup.setDefault();
     };
 
     public void check() {
-        Log.d(TAG, "check: " + (pos+2));
-        if ((pos + 2) == quesMul.size()) {
+        Log.d(TAG, "check: " + (questionID + 2));
+        if ((questionID + 2) == quesMul.size()) {
             buttonNext.setOnClickListener(showResult);
         }
     }

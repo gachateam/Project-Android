@@ -8,5 +8,4 @@ import java.util.ArrayList;
 
 public abstract class AbstractFragment extends Fragment {
     public abstract void setQuestion(Ques question);
-    public abstract void updateUserInteraction(ArrayList<Ques> listQues, int questionID);
 }
