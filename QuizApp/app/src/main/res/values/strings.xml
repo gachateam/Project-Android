@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="facebook_app_id">539327340813116</string>
+    <string name="fb_login_protocol_scheme">fb539327340813116</string>
+
     <string name="btnNext">Next</string>
     <string name="btnSubmit">My Submit</string>
     <string name="txt_view1">Quiz</string>
