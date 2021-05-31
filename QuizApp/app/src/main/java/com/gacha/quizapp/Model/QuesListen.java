@@ -1,11 +1,22 @@
 package com.gacha.quizapp.Model;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
 public class QuesListen extends Ques implements Serializable {
     private String ques;
+    private String userAns;
+
+    public String getUserAns() {
+        return userAns;
+    }
+
+    public void setUserAns(String userAns) {
+        this.userAns = userAns;
+    }
 
     public String getQues() {
         return ques;
@@ -27,16 +38,17 @@ public class QuesListen extends Ques implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return "QuesRead{" +
+        return "QuesListen{" +
                 "ques='" + ques + '\'' +
+                ", userAns='" + userAns + '\'' +
+                ", type=" + type +
                 ", id=" + id +
                 ", category=" + category +
-                ", type=" + type +
                 '}';
     }
 
     @Override
-    public int getPoint() {
-        return 0;
+    public boolean getPoint() {
+        return (userAns != null && userAns.equals(ques))?true:false;
     }
 }

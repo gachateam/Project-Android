@@ -1,5 +1,7 @@
 package com.gacha.quizapp.Model;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -7,6 +9,15 @@ public class QuesMul extends Ques implements Serializable {
     private int ansC;
     private String ques;
     private ArrayList<String> ans;
+    private int userAns;
+
+    public int getUserAns() {
+        return userAns;
+    }
+
+    public void setUserAns(int userAns) {
+        this.userAns = userAns;
+    }
 
     public int getAnsC() {
         return ansC;
@@ -50,20 +61,22 @@ public class QuesMul extends Ques implements Serializable {
         this.ans = ans;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "QuesMul{" +
-                "\nid=" + id +
-                "\n, ansC='" + ansC + '\'' +
-                "\n, category=" + category +
-                "\n, ques='" + ques + '\'' +
-                "\n, type=" + type +
-                "\n, ans=" + ans +
+                "ansC=" + ansC +
+                ", ques='" + ques + '\'' +
+                ", ans=" + ans +
+                ", userAns=" + userAns +
+                ", type=" + type +
+                ", id=" + id +
+                ", category=" + category +
                 '}';
     }
 
     @Override
-    public int getPoint() {
-        return 0;
+    public boolean getPoint() {
+        return ansC == userAns;
     }
 }

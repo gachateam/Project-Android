@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.gacha.quizapp.CheckBoxGroup;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMul;
 import com.gacha.quizapp.R;
@@ -31,6 +32,20 @@ public class QuesMulFragment extends AbstractFragment {
         this.quesMul = (QuesMul) question;
     }
 
+    @Override
+    public Ques updateUserInteraction(ArrayList<Ques> listQues, int questionID) {
+        Ques ques = new QuesMul();
+
+        for (int i = 0; i < cbs.size(); i++) {
+            if (cbs.get(i).isChecked()) {
+                ques = listQues.get(questionID);
+                ((QuesMul) ques).setUserAns(i);
+            }
+        }
+
+        return ques;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,10 +58,12 @@ public class QuesMulFragment extends AbstractFragment {
         CheckBox cb4 = view.findViewById(R.id.checkD);
         Collections.addAll(this.cbs, cb1, cb2, cb3, cb4);
 
+        new CheckBoxGroup(cb1, cb2, cb3, cb4);
+
         ques.setText(this.quesMul.getQues());
-        for (int i = 0; i < cbs.size();i++){
+        for (int i = 0; i < cbs.size(); i++) {
             cbs.get(i).setText(this.quesMul.getAns().get(i));
-            Log.d("TAG", "onCreateView: "+this.quesMul.getAns().get(i));
+            Log.d("TAG", "onCreateView: " + this.quesMul.getAns().get(i));
         }
 
         return view;

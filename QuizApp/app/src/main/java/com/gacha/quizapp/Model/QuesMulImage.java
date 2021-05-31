@@ -1,17 +1,31 @@
 package com.gacha.quizapp.Model;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class QuesMulImage extends Ques implements Serializable {
-    static class AnsImage
+    public static class AnsImage implements Serializable
     {
         public String image;
         public String ans;
+
+        public AnsImage() {
+        }
     };
     private int ansC;
     private String ques;
     private ArrayList<AnsImage> ans;
+    private int userAns;
+
+    public int getUserAns() {
+        return userAns;
+    }
+
+    public void setUserAns(int userAns) {
+        this.userAns = userAns;
+    }
 
     public int getAnsC() {
         return ansC;
@@ -40,6 +54,14 @@ public class QuesMulImage extends Ques implements Serializable {
     public QuesMulImage() {
     }
 
+    public String testAnsImage(){
+        StringBuilder result = new StringBuilder("{ ");
+        for (AnsImage ansI : ans) {
+            result.append(String.format("%s , %s", ansI.image, ansI.ans));
+        }
+        return result + " }";
+    }
+
     public QuesMulImage(int id,int ansC, int category, String ques, int type, ArrayList<AnsImage> ans) {
         super(type,id,category);
         this.ansC = ansC;
@@ -47,20 +69,22 @@ public class QuesMulImage extends Ques implements Serializable {
         this.ans = ans;
     }
 
+    @NonNull
     @Override
     public String toString() {
-        return "QuesMul{" +
-                "\nid=" + id +
-                "\n, ansC='" + ansC + '\'' +
-                "\n, category=" + category +
-                "\n, ques='" + ques + '\'' +
-                "\n, type=" + type +
-                "\n, ans=" + ans +
+        return "QuesMulImage{" +
+                "ansC=" + ansC +
+                ", ques='" + ques + '\'' +
+                ", ans=" + ans +
+                ", userAns=" + userAns +
+                ", type=" + type +
+                ", id=" + id +
+                ", category=" + category +
                 '}';
     }
 
     @Override
-    public int getPoint() {
-        return 0;
+    public boolean getPoint() {
+        return userAns == ansC;
     }
 }

@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMul;
@@ -31,12 +33,6 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_screen);
 
-//        HashMap<String,Integer> color = new HashMap<>();
-//        color.put("black",this.getResources().getColor(R.color.black));
-//        color.put("blue",this.getResources().getColor(R.color.blue));
-//        color.put("colorPrimary",this.getResources().getColor(R.color.colorPrimary));
-//        color.put("colorPrimaryDark",this.getResources().getColor(R.color.colorPrimaryDark));
-
         ArrayList<Category> listCategory = new ArrayList<>();
         ArrayList<Ques> listQues = new ArrayList<>();
         ArrayList<Unit> listUnit = new ArrayList<>();
@@ -54,7 +50,7 @@ public class StartActivity extends AppCompatActivity {
                     int type;
                     if ((type = data.child("type").getValue(Integer.class)) == Ques.TYPE_MUL_QUES) {
                         listQues.add(data.getValue(QuesMul.class));
-                    }else if(type == Ques.TYPE_READ){
+                    }else if(type == Ques.TYPE_LISTEN){
                         listQues.add(data.getValue(QuesListen.class));
                     }else if (type == Ques.TYPE_SPEAK){
                         listQues.add(data.getValue(QuesSpeak.class));
@@ -66,9 +62,11 @@ public class StartActivity extends AppCompatActivity {
                     listUnit.add(data.getValue(Unit.class));
                 }
 
-                for(Ques ques: listQues) {
-                    Log.d(TAG, "onDataChange: "+ques);
-                }
+//                for(Ques ques: listQues) {
+//                    if (ques instanceof QuesMulImage){
+//                        Log.d(TAG, "onDataChange: "+((QuesMulImage)ques).testAnsImage());
+//                    }
+//                }
 
                 Intent intent = new Intent(StartActivity.this,NavigationActivity.class);
                 intent.putExtra("listCategory",listCategory);
@@ -84,4 +82,5 @@ public class StartActivity extends AppCompatActivity {
             }
         });
     }
+
 }

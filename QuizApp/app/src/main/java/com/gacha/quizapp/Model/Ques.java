@@ -8,7 +8,7 @@ public abstract class Ques implements Serializable {
     protected int category;
 
     public static int TYPE_MUL_QUES = 1;
-    public static int TYPE_READ = 2;
+    public static int TYPE_LISTEN = 2;
     public static int TYPE_SPEAK = 3;
     public static int TYPE_MUL_QUES_IMAGE = 4;
 
@@ -27,6 +27,7 @@ public abstract class Ques implements Serializable {
     public void setCategory(int category) {
         this.category = category;
     }
+
     public int getType() {
         return type;
     }
@@ -35,7 +36,7 @@ public abstract class Ques implements Serializable {
         this.type = type;
     }
 
-    public abstract int getPoint();
+    public abstract boolean getPoint();
 
     public Ques(int type, int id, int category) {
         this.type = type;

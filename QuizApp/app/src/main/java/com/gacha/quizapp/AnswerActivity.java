@@ -57,42 +57,21 @@ public class AnswerActivity extends AppCompatActivity {
         imageButton = findViewById(R.id.btn_prev);
 
         //set onclick button back screen
-        imageButton.setOnClickListener(v -> {
-            finish();
-        });
+        imageButton.setOnClickListener(v -> finish());
 
         //set onclick next question
         buttonNext.setOnClickListener(v -> {
+            listQues.set(questionID, fragment.updateUserInteraction(listQues, questionID));
             questionID++;
             if (questionID < listQues.size()) {
                 updateUI();
             }
             if (questionID > listQues.size() - 2) {
-                ((Button) v).setText("Submit");
-                ((Button) v).setOnClickListener(showResult);
+                String submit = "Submit";
+                ((Button) v).setText(submit);
+                v.setOnClickListener(showResult);
             }
         });
-
-
-        //create check box group
-//        cbs = new ArrayList<>();
-//        cbs.add(findViewById(R.id.checkA));
-//        cbs.add(findViewById(R.id.checkB));
-//        cbs.add(findViewById(R.id.checkC));
-//        cbs.add(findViewById(R.id.checkD));
-//        checkBoxGroup = new CheckBoxGroup(cbs.get(0), cbs.get(1), cbs.get(2), cbs.get(3));
-//        //get view
-//        textView = findViewById(R.id.question);
-//        buttonNext = findViewById(R.id.btnNext);
-//        imageButton = findViewById(R.id.btn_prev);
-//        //get Intent
-//        Intent intent = getIntent();
-//        quesMul = (ArrayList<QuesMul>) intent.getExtras().get("ques");
-//
-//        buttonNext.setOnClickListener(quesNext);
-//        imageButton.setOnClickListener((v)->{
-//            finish();
-//        });
     }
 
     private void updateUI() {
@@ -125,6 +104,17 @@ public class AnswerActivity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
+        TextView textView = alertDialog.findViewById(R.id.result);
+        //cal point
+        double point = 0;
+        for (Ques ques : listQues) {
+            point = ques.getPoint() ? point + 1 : point;
+        }
+        double result = (point / listQues.size()) * 100;
+        String resultString = result + "%";
+
+        assert textView != null;
+        textView.setText(resultString);
         Button btnOk = alertDialog.findViewById(R.id.btn_ok);
 
         assert btnOk != null;

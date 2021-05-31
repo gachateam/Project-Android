@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnVoice"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:background="@drawable/button_default"
@@ -26,7 +26,7 @@
             tools:ignore="ContentDescription" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/resultListen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -36,7 +36,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            android:autofillHints=""
+            tools:ignore="LabelFor" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.gacha.quizapp.NavigationActivity;
 import com.gacha.quizapp.R;
+import com.gacha.quizapp.StartActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -68,7 +69,8 @@ public class SignInFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(getActivity(), "Sign In successful", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getActivity(), NavigationActivity.class));
+                            startActivity(new Intent(getActivity(), StartActivity.class));
+                            getActivity().finish();
                         }else {
                             Toast.makeText(getActivity(), "Sign Up failed " + task.getException(), Toast.LENGTH_LONG).show();
                         }

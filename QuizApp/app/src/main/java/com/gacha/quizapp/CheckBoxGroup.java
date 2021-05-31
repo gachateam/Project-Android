@@ -14,7 +14,7 @@ public class CheckBoxGroup {
         Collections.addAll(checkBoxes, cbs);
         for (CheckBox cb : checkBoxes) {
             View.OnClickListener onClickListener = v -> {
-                int pos = checkBoxes.indexOf((CheckBox) v);
+                int pos = checkBoxes.indexOf(v);
                 boolean checked = checkBoxes.get(pos).isChecked();
 
                 for (int i = 0; i < checkBoxes.size(); i++) {
@@ -24,11 +24,6 @@ public class CheckBoxGroup {
                 checkBoxes.get(pos).setChecked(checked);
             };
             cb.setOnClickListener(onClickListener);
-        }
-    }
-    public void setDefault(){
-        for (int i = 0; i < checkBoxes.size(); i++) {
-            checkBoxes.get(i).setChecked(false);
         }
     }
 }

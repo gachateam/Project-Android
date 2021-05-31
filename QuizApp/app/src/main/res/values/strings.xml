@@ -58,6 +58,7 @@
     <string name="congrats_successfully">Your quiz congrats successfully</string>
     <string name="ok">Ok</string>
     <string name="next">NEXT</string>
+    <string name="loading">Loading...</string>
 </resources>
 
 
