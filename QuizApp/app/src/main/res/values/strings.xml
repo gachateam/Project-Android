@@ -32,8 +32,8 @@
     <string name="toy_line">Toy Line</string>
     <string name="sign_in">Sign in</string>
 
-    <string name="login_with_google">login with google</string>
-    <string name="login_with_facebook">login with facebook</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="login_with_facebook">Login with Facebook</string>
     <string name="you_don_t_have_an_account">You don\'t have an account?</string>
     <string name="sign_up">Sign up</string>
 

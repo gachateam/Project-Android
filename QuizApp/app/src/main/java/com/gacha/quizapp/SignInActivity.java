@@ -16,14 +16,13 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.gacha.quizapp.adapters.SignInAdapter;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,14 +33,13 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.Arrays;
+
 public class SignInActivity extends AppCompatActivity {
-    private TabLayout tabLayout;
     private ViewPager viewPager;
-    private SignInButton btnGg;
-    private LoginButton btnFb;
     private GoogleSignInClient googleSignInClient;
     private FirebaseAuth firebaseAuth;
-    private int RC_SIGN_IN = 1;
+    private final int RC_SIGN_IN = 1;
     private CallbackManager callbackManager;
 
     @Override
@@ -49,10 +47,10 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabLayout = findViewById(R.id.tabLayout);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager2);
-        btnFb = findViewById(R.id.button4);
-        btnGg = findViewById(R.id.button5);
+        Button btnFb = findViewById(R.id.button4);
+        Button btnGg = findViewById(R.id.button5);
         firebaseAuth = FirebaseAuth.getInstance();
 
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"));
@@ -96,25 +94,30 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         callbackManager = CallbackManager.Factory.create();
-        btnFb.setPermissions("email", "public_profile");
-
-        btnFb.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        btnFb.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(LoginResult loginResult) {
-                Log.d("test", "facebook:onSuccess:" + loginResult);
-                handleFacebookAccessToken(loginResult.getAccessToken());
-            }
+            public void onClick(View v) {
+                LoginManager.getInstance().logInWithReadPermissions(SignInActivity.this, Arrays.asList("email", "public_profile"));
+                LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Log.d("test", "facebook:onSuccess:" + loginResult);
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                    }
 
-            @Override
-            public void onCancel() {
-                Log.d("test", "facebook:onCancel");
-            }
+                    @Override
+                    public void onCancel() {
+                        Log.d("test", "facebook:onCancel");
+                    }
 
-            @Override
-            public void onError(FacebookException error) {
-                Log.d("test", "facebook:onError" + error.getMessage());
+                    @Override
+                    public void onError(FacebookException error) {
+                        Log.d("test", "facebook:onError" + error.getMessage());
+                    }
+                });
             }
         });
+
     }
 
     private void signIn() {

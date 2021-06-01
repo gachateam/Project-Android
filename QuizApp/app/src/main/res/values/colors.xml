@@ -16,4 +16,8 @@
     <color name="blue">#0099ff</color>
     <color name="darkBlue">#0576C1</color>
     <color name="darkGreen">#FF11802C</color>
+    <color name="faceb_blue">#385c8e</color>
+    <color name="gg_text">#f14336</color>
+    <color name="gray">#c3c3c3</color>
+    <color name="tint">#0064b6</color>
 </resources>
