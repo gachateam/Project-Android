@@ -31,4 +31,8 @@
         <item name="android:button">@drawable/custom_check_box</item>
         <item name="android:textSize">15sp</item>
     </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlActivated">@color/white</item>
+    </style>
 </resources>
