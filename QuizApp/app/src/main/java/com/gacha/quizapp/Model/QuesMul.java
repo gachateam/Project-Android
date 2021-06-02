@@ -1,5 +1,7 @@
 package com.gacha.quizapp.Model;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
@@ -52,6 +54,7 @@ public class QuesMul extends Ques implements Serializable {
     }
 
     public QuesMul() {
+        ansC = -1;
     }
 
     public QuesMul(int id,int ansC, int category, String ques, int type, ArrayList<String> ans) {
@@ -77,6 +80,7 @@ public class QuesMul extends Ques implements Serializable {
 
     @Override
     public boolean getPoint() {
+        Log.d("TAG", "getPoint: "+(ansC == userAns));
         return ansC == userAns;
     }
 }

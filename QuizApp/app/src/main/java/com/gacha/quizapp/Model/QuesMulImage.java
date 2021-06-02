@@ -1,11 +1,16 @@
 package com.gacha.quizapp.Model;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
+
+import com.gacha.quizapp.fragments.QuesMulFragment;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class QuesMulImage extends Ques implements Serializable {
+    private static final String TAG = QuesMulImage.class.getSimpleName();
     public static class AnsImage implements Serializable
     {
         public String image;
@@ -52,9 +57,10 @@ public class QuesMulImage extends Ques implements Serializable {
     }
 
     public QuesMulImage() {
+        ansC = -1;
     }
 
-    public String testAnsImage(){
+    public String testAnsImage(ArrayList<AnsImage> ans){
         StringBuilder result = new StringBuilder("{ ");
         for (AnsImage ansI : ans) {
             result.append(String.format("%s , %s", ansI.image, ansI.ans));

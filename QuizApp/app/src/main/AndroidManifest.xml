@@ -13,7 +13,7 @@
         <activity android:name=".StartQuizActivity"/>
         <activity android:name=".NavigationActivity"/>
         <activity android:name=".AnswerActivity"/>
-        <activity android:name=".TestActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

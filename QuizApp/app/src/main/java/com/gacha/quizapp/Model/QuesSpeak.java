@@ -1,5 +1,7 @@
 package com.gacha.quizapp.Model;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
@@ -46,6 +48,6 @@ public class QuesSpeak extends Ques implements Serializable {
 
     @Override
     public boolean getPoint() {
-        return userAns.equals(ques);
+        return (userAns != null && userAns.equals(ques))?true:false;
     }
 }

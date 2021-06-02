@@ -94,7 +94,15 @@ public class AnswerActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public View.OnClickListener showResult = v -> {
+    public View.OnClickListener showResult = this::onClick;
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+    private void onClick(View v) {
+        listQues.set(questionID, fragment.updateUserInteraction(listQues, questionID));
         AlertDialog.Builder builder = new AlertDialog.Builder(AnswerActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
 
@@ -109,6 +117,7 @@ public class AnswerActivity extends AppCompatActivity {
         double point = 0;
         for (Ques ques : listQues) {
             point = ques.getPoint() ? point + 1 : point;
+            Log.d(TAG, "onClick: "+ques.getPoint());
         }
         double result = (point / listQues.size()) * 100;
         String resultString = result + "%";
@@ -119,10 +128,5 @@ public class AnswerActivity extends AppCompatActivity {
 
         assert btnOk != null;
         btnOk.setOnClickListener(v1 -> alertDialog.dismiss());
-    };
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
     }
 }

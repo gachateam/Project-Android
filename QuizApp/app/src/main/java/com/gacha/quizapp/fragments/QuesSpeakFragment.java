@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,9 +44,9 @@ public class QuesSpeakFragment extends AbstractFragment  {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.ques_speak_fragment,container,false);
 
-        EditText editText = view.findViewById(R.id.ques);
+        TextView textView = view.findViewById(R.id.ques);
 
-        editText.setText(this.quesSpeak.getQues());
+        textView.setText(this.quesSpeak.getQues());
 
         view.findViewById(R.id.btnVoice).setOnClickListener(this::getSpeechInput);
 

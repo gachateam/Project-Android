@@ -49,6 +49,7 @@ public class QuesListen extends Ques implements Serializable {
 
     @Override
     public boolean getPoint() {
+        Log.d("TAG", "getPoint: "+((userAns != null && userAns.equals(ques))?true:false));
         return (userAns != null && userAns.equals(ques))?true:false;
     }
 }

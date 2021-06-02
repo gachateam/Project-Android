@@ -50,11 +50,11 @@ public class StartActivity extends AppCompatActivity {
                     int type;
                     if ((type = data.child("type").getValue(Integer.class)) == Ques.TYPE_MUL_QUES) {
                         listQues.add(data.getValue(QuesMul.class));
-                    }else if(type == Ques.TYPE_LISTEN){
+                    } else if (type == Ques.TYPE_LISTEN) {
                         listQues.add(data.getValue(QuesListen.class));
-                    }else if (type == Ques.TYPE_SPEAK){
+                    } else if (type == Ques.TYPE_SPEAK) {
                         listQues.add(data.getValue(QuesSpeak.class));
-                    }else if (type == Ques.TYPE_MUL_QUES_IMAGE){
+                    } else if (type == Ques.TYPE_MUL_QUES_IMAGE) {
                         listQues.add(data.getValue(QuesMulImage.class));
                     }
                 }
@@ -62,16 +62,10 @@ public class StartActivity extends AppCompatActivity {
                     listUnit.add(data.getValue(Unit.class));
                 }
 
-//                for(Ques ques: listQues) {
-//                    if (ques instanceof QuesMulImage){
-//                        Log.d(TAG, "onDataChange: "+((QuesMulImage)ques).testAnsImage());
-//                    }
-//                }
-
-                Intent intent = new Intent(StartActivity.this,NavigationActivity.class);
-                intent.putExtra("listCategory",listCategory);
-                intent.putExtra("listQues",listQues);
-                intent.putExtra("listUnit",listUnit);
+                Intent intent = new Intent(StartActivity.this, NavigationActivity.class);
+                intent.putExtra("listCategory", listCategory);
+                intent.putExtra("listQues", listQues);
+                intent.putExtra("listUnit", listUnit);
                 StartActivity.this.startActivity(intent);
                 finish();
             }

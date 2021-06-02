@@ -23,6 +23,8 @@ public class QuesMulFragment extends AbstractFragment {
     private QuesMul quesMul;
     private ArrayList<CheckBox> cbs;
 
+    private static final String TAG = QuesMulFragment.class.getSimpleName();
+
     public QuesMulFragment() {
         this.cbs = new ArrayList<>();
     }
@@ -34,12 +36,11 @@ public class QuesMulFragment extends AbstractFragment {
 
     @Override
     public Ques updateUserInteraction(ArrayList<Ques> listQues, int questionID) {
-        Ques ques = new QuesMul();
+        QuesMul ques = (QuesMul) listQues.get(questionID);
 
         for (int i = 0; i < cbs.size(); i++) {
             if (cbs.get(i).isChecked()) {
-                ques = listQues.get(questionID);
-                ((QuesMul) ques).setUserAns(i);
+                ques.setUserAns(i);
             }
         }
 
