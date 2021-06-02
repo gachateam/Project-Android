@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.Menu;
 import android.widget.Button;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -56,6 +57,7 @@ public class NavigationActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
                 if(id == R.id.nav_sign_out) {
                     signOut();
+
                 }
                 return true;
             }
@@ -78,6 +80,7 @@ public class NavigationActivity extends AppCompatActivity {
 
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
+        LoginManager.getInstance().logOut();
         googleSignInClient.signOut().addOnCompleteListener(this,
                 new OnCompleteListener<Void>() {
                     @Override

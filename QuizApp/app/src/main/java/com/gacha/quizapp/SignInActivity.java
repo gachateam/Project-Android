@@ -2,6 +2,8 @@ package com.gacha.quizapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -9,6 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.gacha.quizapp.adapters.SignInAdapter;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -18,26 +26,29 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.Arrays;
+
 public class SignInActivity extends AppCompatActivity {
-    private TabLayout tabLayout;
     private ViewPager viewPager;
-    private Button btnGg;
     private GoogleSignInClient googleSignInClient;
     private FirebaseAuth firebaseAuth;
-    private int RC_SIGN_IN = 1;
+    private final int RC_SIGN_IN = 1;
+    private CallbackManager callbackManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabLayout = findViewById(R.id.tabLayout);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager2);
-//        btnFb = findViewById(R.id.button4);
-        btnGg = findViewById(R.id.button5);
+        Button btnFb = findViewById(R.id.button4);
+        Button btnGg = findViewById(R.id.button5);
         firebaseAuth = FirebaseAuth.getInstance();
 
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"));
@@ -74,6 +85,32 @@ public class SignInActivity extends AppCompatActivity {
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
         btnGg.setOnClickListener(v -> signIn());
+
+        callbackManager = CallbackManager.Factory.create();
+        btnFb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginManager.getInstance().logInWithReadPermissions(SignInActivity.this, Arrays.asList("email", "public_profile"));
+                LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Log.d("test", "facebook:onSuccess:" + loginResult);
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Log.d("test", "facebook:onCancel");
+                    }
+
+                    @Override
+                    public void onError(FacebookException error) {
+                        Log.d("test", "facebook:onError" + error.getMessage());
+                    }
+                });
+            }
+        });
+
     }
 
     private void signIn() {
@@ -94,6 +131,8 @@ public class SignInActivity extends AppCompatActivity {
                 Toast.makeText(SignInActivity.this, "Error" + e.getMessage() ,Toast.LENGTH_LONG).show();
             }
         }
+
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     private void firebaseGoogleAuth(String idToken) {
@@ -103,10 +142,33 @@ public class SignInActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
 //                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(SignInActivity.this, StartActivity.class));
+                        finish();
                     } else {
                         Toast.makeText(SignInActivity.this, "ErrorX2", Toast.LENGTH_LONG).show();
                     }
                 });
     }
 
+    private void handleFacebookAccessToken(AccessToken token) {
+        Log.d("test", "handleFacebookAccessToken:" + token);
+
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("test", "signInWithCredential:success");
+                            startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
+                            finish();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("test", "signInWithCredential:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 }
