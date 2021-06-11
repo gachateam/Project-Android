@@ -16,6 +16,7 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.gacha.quizapp.adapters.SignInAdapter;
@@ -31,9 +32,14 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignInActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -41,6 +47,9 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private final int RC_SIGN_IN = 1;
     private CallbackManager callbackManager;
+    private String userID;
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseUser firebaseUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +61,8 @@ public class SignInActivity extends AppCompatActivity {
         Button btnFb = findViewById(R.id.button4);
         Button btnGg = findViewById(R.id.button5);
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
 
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"));
         tabLayout.addTab(tabLayout.newTab().setText("Sign Up"));
@@ -118,6 +129,8 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     private void signIn() {
@@ -149,7 +162,15 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+                            GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(SignInActivity.this);
 //                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                            userID = firebaseAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("userName", acct.getDisplayName());
+                            user.put("email", acct.getEmail());
+                            documentReference.set(user);
                             startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
                             finish();
                         } else {
@@ -170,6 +191,15 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("test", "signInWithCredential:success");
+                            FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+                            Profile profile = Profile.getCurrentProfile();
+//                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                            userID = firebaseAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("userName", profile.getName());
+                            user.put("email", firebaseUser.getEmail());
+                            documentReference.set(user);
                             startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
                             finish();
                         } else {
