@@ -29,6 +29,8 @@ public class SignInFragment extends Fragment {
     private EditText iEmail, iPassword;
     private Button btnSignIn;
 
+    private static final String TAG = SignInFragment.class.getSimpleName();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         signInFragment = inflater.inflate(R.layout.signin_fragment, container, false);

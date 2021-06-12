@@ -117,11 +117,12 @@ public class AnswerActivity extends AppCompatActivity {
         alertDialog.show();
 
         TextView textView = alertDialog.findViewById(R.id.result);
+        Log.d(TAG, "onClick: size: " + listQues.size());
         //cal point
         double point = 0;
         for (Ques ques : listQues) {
             point = ques.getPoint() ? point + 1 : point;
-            Log.d(TAG, "onClick: " + ques.getPoint());
+            Log.d(TAG, "onClick: ques: " + ques.getPoint() + " " + ques.getType());
         }
         double result = (point / listQues.size()) * 100;
         String resultString = result + "%";

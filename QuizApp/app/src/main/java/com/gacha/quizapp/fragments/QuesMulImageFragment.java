@@ -43,7 +43,6 @@ public class QuesMulImageFragment extends AbstractFragment {
         QuesMulImage quesMulImage =(QuesMulImage) listQues.get(questionID);
 
         for (int i = 0; i < ques.size(); i++) {
-            Log.d(TAG, "updateUserInteraction: "+ques.get(i).isSelected());
             if (ques.get(i).isSelected()){
                 quesMulImage.setUserAns(i);
             }

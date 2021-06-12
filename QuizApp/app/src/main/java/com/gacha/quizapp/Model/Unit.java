@@ -8,6 +8,8 @@ public class Unit implements Serializable {
     private ArrayList<Integer> ques;
     private String description;
 
+    private static final String TAG = QuesSpeak.class.getSimpleName();
+
     public ArrayList<Integer> getQues() {
         return ques;
     }

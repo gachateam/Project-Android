@@ -18,6 +18,9 @@ import com.google.firebase.storage.StorageReference;
 
 public class TestActivity extends Activity {
     private ConstraintLayout ques1 , ques2, ques3, ques4;
+
+    private static final String TAG = StartActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

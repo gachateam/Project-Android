@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.R;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class QuesImageWidget extends LinearLayout {
     private ConstraintLayout ques1 , ques2, ques3, ques4;
     private ArrayList<ConstraintLayout> ques = new ArrayList<>();
     private ViewGroup playerLayout;
+
+    private static final String TAG = QuesSpeak.class.getSimpleName();
 
     public QuesImageWidget(@NonNull Context context) {
         super(context);

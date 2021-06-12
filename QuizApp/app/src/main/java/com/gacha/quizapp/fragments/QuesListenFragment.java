@@ -23,7 +23,9 @@ import java.util.UUID;
 public class QuesListenFragment extends AbstractFragment {
     private QuesListen quesListen;
     private EditText editText;
-    TextToSpeech textToSpeech;
+    private TextToSpeech textToSpeech;
+
+    private static final String TAG = QuesListenFragment.class.getSimpleName();
 
     @Override
     public void setQuestion(Ques question) {
@@ -35,6 +37,10 @@ public class QuesListenFragment extends AbstractFragment {
         QuesListen ques = (QuesListen) listQues.get(questionID);
 
         ques.setUserAns(editText.getText().toString());
+
+        Log.d(TAG, "updateUserInteraction: " + ques.getQues());
+        Log.d(TAG, "updateUserInteraction: " + ques.getUserAns());
+        Log.d(TAG, "updateUserInteraction: " + ques.getPoint());
 
         return ques;
     }

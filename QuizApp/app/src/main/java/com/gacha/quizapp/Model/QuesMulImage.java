@@ -22,7 +22,7 @@ public class QuesMulImage extends Ques implements Serializable {
     private int ansC;
     private String ques;
     private ArrayList<AnsImage> ans;
-    private int userAns;
+    private int userAns = -1;
 
     public int getUserAns() {
         return userAns;

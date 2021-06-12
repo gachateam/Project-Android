@@ -28,6 +28,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     private int layoutID;
     private ArrayList<Category> list;
 
+    private static final String TAG = CategoryAdapter.class.getSimpleName();
+
     public CategoryAdapter(Activity context, int layoutID, ArrayList<Category> list) {
         this.context = context;
         this.layoutID = layoutID;

@@ -17,13 +17,16 @@ import androidx.annotation.Nullable;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.R;
+import com.gacha.quizapp.adapters.SignInAdapter;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class QuesSpeakFragment extends AbstractFragment  {
     private QuesSpeak quesSpeak;
-    private String result;
+    private String result = "";
+
+    private static final String TAG = QuesSpeakFragment.class.getSimpleName();
 
     @Override
     public void setQuestion(Ques question) {

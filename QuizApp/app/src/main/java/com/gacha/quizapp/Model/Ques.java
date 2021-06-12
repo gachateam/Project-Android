@@ -1,11 +1,15 @@
 package com.gacha.quizapp.Model;
 
+import com.gacha.quizapp.fragments.SignUpFragment;
+
 import java.io.Serializable;
 
 public abstract class Ques implements Serializable {
     protected int type;
     protected int id;
     protected int category;
+
+    private static final String TAG = Ques.class.getSimpleName();
 
     public static int TYPE_MUL_QUES = 1;
     public static int TYPE_LISTEN = 2;

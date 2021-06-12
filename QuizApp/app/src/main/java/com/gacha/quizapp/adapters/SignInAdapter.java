@@ -14,6 +14,8 @@ public class SignInAdapter extends FragmentPagerAdapter {
     private Context context;
     int totalTabs;
 
+    private static final String TAG = SignInAdapter.class.getSimpleName();
+
     public SignInAdapter(FragmentManager fm, Context context, int totalTabs){
         super(fm);
         this.context = context;

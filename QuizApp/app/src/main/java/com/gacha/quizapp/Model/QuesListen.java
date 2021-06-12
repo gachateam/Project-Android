@@ -8,7 +8,9 @@ import java.io.Serializable;
 
 public class QuesListen extends Ques implements Serializable {
     private String ques;
-    private String userAns;
+    private String userAns = "";
+
+    private static final String TAG = QuesListen.class.getSimpleName();
 
     public String getUserAns() {
         return userAns;
@@ -49,7 +51,6 @@ public class QuesListen extends Ques implements Serializable {
 
     @Override
     public boolean getPoint() {
-        Log.d("TAG", "getPoint: "+((userAns != null && userAns.equals(ques))?true:false));
-        return (userAns != null && userAns.equals(ques))?true:false;
+        return userAns.toLowerCase().equals(ques.toLowerCase());
     }
 }

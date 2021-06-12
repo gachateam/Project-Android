@@ -7,8 +7,10 @@ import androidx.annotation.NonNull;
 import java.io.Serializable;
 
 public class QuesSpeak extends Ques implements Serializable {
-    private String ques;
-    private String userAns;
+    private String ques = "";
+    private String userAns = "";
+
+    private static final String TAG = QuesSpeak.class.getSimpleName();
 
     public String getUserAns() {
         return userAns;
@@ -26,8 +28,8 @@ public class QuesSpeak extends Ques implements Serializable {
         this.ques = ques;
     }
 
-    public QuesSpeak(String ques, int id, int category,int type) {
-        super(type,id,category);
+    public QuesSpeak(String ques, int id, int category, int type) {
+        super(type, id, category);
         this.ques = ques;
     }
 
@@ -48,6 +50,6 @@ public class QuesSpeak extends Ques implements Serializable {
 
     @Override
     public boolean getPoint() {
-        return (userAns != null && userAns.equals(ques))?true:false;
+        return userAns.toLowerCase().equals(ques.toLowerCase());
     }
 }

@@ -11,7 +11,9 @@ public class QuesMul extends Ques implements Serializable {
     private int ansC;
     private String ques;
     private ArrayList<String> ans;
-    private int userAns;
+    private int userAns = -1;
+
+    private static final String TAG = QuesMul.class.getSimpleName();
 
     public int getUserAns() {
         return userAns;

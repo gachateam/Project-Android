@@ -34,6 +34,8 @@ public class SignUpFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private String userID;
 
+    private static final String TAG = SignUpFragment.class.getSimpleName();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         signUpFragment = inflater.inflate(R.layout.signup_fragment, container, false);
