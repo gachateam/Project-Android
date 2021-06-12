@@ -40,7 +40,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/text_view1"
+                android:id="@+id/questionNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"

@@ -1,5 +1,6 @@
 package com.gacha.quizapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -74,7 +75,10 @@ public class AnswerActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("DefaultLocale")
     private void updateUI() {
+        TextView textView = findViewById(R.id.questionNumber);
+        textView.setText(String.format("question: %d", 1 + questionID));
         Fragment f = getSupportFragmentManager().findFragmentByTag(questionID + "");
         if (listQues.get(questionID) instanceof QuesListen) {
             fragment = f != null ? (QuesListenFragment) f : new QuesListenFragment();
@@ -117,7 +121,7 @@ public class AnswerActivity extends AppCompatActivity {
         double point = 0;
         for (Ques ques : listQues) {
             point = ques.getPoint() ? point + 1 : point;
-            Log.d(TAG, "onClick: "+ques.getPoint());
+            Log.d(TAG, "onClick: " + ques.getPoint());
         }
         double result = (point / listQues.size()) * 100;
         String resultString = result + "%";
