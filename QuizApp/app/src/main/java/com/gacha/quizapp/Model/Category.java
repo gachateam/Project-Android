@@ -6,6 +6,15 @@ import java.io.Serializable;
 
 public class Category implements Serializable {
     private String category;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCategory() {
         return category;
@@ -15,14 +24,18 @@ public class Category implements Serializable {
         this.category = category;
     }
 
-    public Category(String category) {
+    public Category(int id,String category) {
         this.category = category;
+        this.id = id;
     }
     public Category() {
     }
-    @NonNull
+
     @Override
-    public String toString(){
-        return category;
+    public String toString() {
+        return "Category{" +
+                "category='" + category + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

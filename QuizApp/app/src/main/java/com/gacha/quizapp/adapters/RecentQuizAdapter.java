@@ -25,6 +25,10 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
     private ArrayList<Unit> list;
     private ArrayList<Ques> listQues;
 
+    public void setList(ArrayList<Unit> list) {
+        this.list = list;
+    }
+
     private static final String TAG = RecentQuizAdapter.class.getSimpleName();
 
     public RecentQuizAdapter(Activity context, int layoutID, ArrayList<Unit> list, ArrayList<Ques> listQues) {
@@ -50,24 +54,9 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
             Intent intent = new Intent(context, StartQuizActivity.class);
             intent.putExtra("name",list.get(position).getName());
             intent.putExtra("description",list.get(position).getDescription());
-            intent.putExtra("ques",getQuesList(list.get(position).getQues()));
+            intent.putExtra("ques",list.get(position).getQuesList(listQues));
             context.startActivity(intent);
         });
-    }
-
-    private ArrayList<Ques> getQuesList(ArrayList<Integer> listQues){
-        ArrayList<Ques> quesMul = new ArrayList<>();
-
-        for (Integer quesId : listQues) {
-            for (Ques quesMu : this.listQues) {
-                if (quesMu.getId() == quesId){
-                    quesMul.add(quesMu);
-                    break;
-                }
-            }
-        }
-
-        return quesMul;
     }
 
     @Override

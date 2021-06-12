@@ -64,7 +64,6 @@ public class QuesMulFragment extends AbstractFragment {
         ques.setText(this.quesMul.getQues());
         for (int i = 0; i < cbs.size(); i++) {
             cbs.get(i).setText(this.quesMul.getAns().get(i));
-            Log.d("TAG", "onCreateView: " + this.quesMul.getAns().get(i));
         }
 
         return view;

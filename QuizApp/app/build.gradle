@@ -48,6 +48,8 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:5.15.3'
     implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
     implementation 'com.google.firebase:firebase-firestore:23.0.1'
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

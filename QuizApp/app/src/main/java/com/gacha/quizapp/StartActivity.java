@@ -43,8 +43,11 @@ public class StartActivity extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Category category;
                 for (DataSnapshot data : snapshot.child("category").getChildren()) {
-                    listCategory.add(data.getValue(Category.class));
+                    category = data.getValue(Category.class);
+                    category.setId(Integer.parseInt(data.getKey()));
+                    listCategory.add(category);
                 }
                 for (DataSnapshot data : snapshot.child("ques").getChildren()) {
                     int type;
@@ -61,6 +64,10 @@ public class StartActivity extends AppCompatActivity {
                 for (DataSnapshot data : snapshot.child("unit").getChildren()) {
                     listUnit.add(data.getValue(Unit.class));
                 }
+
+//                for (Category category1:listCategory) {
+//                    Log.d(TAG, "onDataChange: "+category1);
+//                }
 
                 Intent intent = new Intent(StartActivity.this, NavigationActivity.class);
                 intent.putExtra("listCategory", listCategory);

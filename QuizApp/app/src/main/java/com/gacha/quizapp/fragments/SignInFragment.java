@@ -70,8 +70,7 @@ public class SignInFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(getActivity(), "Sign In successful", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getActivity(), StartActivity.class));
+                            startActivity(new Intent(SignInFragment.this.getActivity(), StartActivity.class));
                             getActivity().finish();
                         }else {
                             Toast.makeText(getActivity(), "Sign Up failed " + task.getException(), Toast.LENGTH_LONG).show();

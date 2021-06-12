@@ -51,6 +51,7 @@ public class StartQuizActivity extends AppCompatActivity {
             Intent intent1 = new Intent(StartQuizActivity.this, AnswerActivity.class);
             intent1.putExtra("ques", quesMul);
             StartQuizActivity.this.startActivity(intent1);
+            finish();
         });
     }
 }

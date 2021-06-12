@@ -132,6 +132,9 @@ public class AnswerActivity extends AppCompatActivity {
         Button btnOk = alertDialog.findViewById(R.id.btn_ok);
 
         assert btnOk != null;
-        btnOk.setOnClickListener(v1 -> alertDialog.dismiss());
+        btnOk.setOnClickListener(v1 -> {
+            AnswerActivity.this.finish();
+            alertDialog.dismiss();
+        });
     }
 }

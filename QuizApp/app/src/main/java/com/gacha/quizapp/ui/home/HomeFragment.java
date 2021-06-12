@@ -51,8 +51,8 @@ public class HomeFragment extends Fragment {
         recyclerViewCategory.setLayoutManager(gridLayoutManagerCategory);
         recyclerViewRecentQuiz.setLayoutManager(gridLayoutManagerRecentQuiz);
 
-        CategoryAdapter adapterCategory = new CategoryAdapter(context, R.layout.category_item_recycler_view, listCategory);
         RecentQuizAdapter adapterRecentQuiz = new RecentQuizAdapter(context, R.layout.recent_quiz_recycler_view_item, listUnit, listQues);
+        CategoryAdapter adapterCategory = new CategoryAdapter(context, R.layout.category_item_recycler_view, listCategory, listUnit, listQues,adapterRecentQuiz);
 
         recyclerViewRecentQuiz.setAdapter(adapterRecentQuiz);
         recyclerViewCategory.setAdapter(adapterCategory);

@@ -38,10 +38,6 @@ public class QuesListenFragment extends AbstractFragment {
 
         ques.setUserAns(editText.getText().toString());
 
-        Log.d(TAG, "updateUserInteraction: " + ques.getQues());
-        Log.d(TAG, "updateUserInteraction: " + ques.getUserAns());
-        Log.d(TAG, "updateUserInteraction: " + ques.getPoint());
-
         return ques;
     }
 
