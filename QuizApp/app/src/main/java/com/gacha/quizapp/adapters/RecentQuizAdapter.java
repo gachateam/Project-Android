@@ -55,6 +55,7 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
             intent.putExtra("name",list.get(position).getName());
             intent.putExtra("description",list.get(position).getDescription());
             intent.putExtra("ques",list.get(position).getQuesList(listQues));
+            intent.putExtra("unitId",list.get(position).getId());
             context.startActivity(intent);
         });
     }

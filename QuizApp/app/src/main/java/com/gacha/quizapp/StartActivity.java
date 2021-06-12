@@ -16,6 +16,8 @@ import com.gacha.quizapp.Model.QuesListen;
 import com.gacha.quizapp.Model.QuesMulImage;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.Model.Unit;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +34,9 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_screen);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
 
         ArrayList<Category> listCategory = new ArrayList<>();
         ArrayList<Ques> listQues = new ArrayList<>();

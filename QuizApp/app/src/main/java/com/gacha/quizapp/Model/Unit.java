@@ -1,5 +1,7 @@
 package com.gacha.quizapp.Model;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
@@ -10,6 +12,15 @@ public class Unit implements Serializable {
     private ArrayList<Integer> ques;
     private String description;
     private int category;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getCategory() {
         return category;
@@ -45,7 +56,8 @@ public class Unit implements Serializable {
         this.description = description;
     }
 
-    public Unit(String unitName, ArrayList<Integer> quizList, String unitDescription,int category) {
+    public Unit(int id,String unitName, ArrayList<Integer> quizList, String unitDescription,int category) {
+        this.id = id;
         this.name = unitName;
         this.ques = quizList;
         this.description = unitDescription;
@@ -55,16 +67,19 @@ public class Unit implements Serializable {
     public Unit() {
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Unit{" +
                 "name='" + name + '\'' +
                 ", ques=" + ques +
                 ", description='" + description + '\'' +
+                ", category=" + category +
+                ", id=" + id +
                 '}';
     }
 
-    public static ArrayList<Unit> getAllQuesByCategoryInFirebase(DataSnapshot snapshot,int catId){
+    public static ArrayList<Unit> getAllQuesByCategoryInFirebase(DataSnapshot snapshot, int catId){
         ArrayList<Unit> units = new ArrayList<>();
 
         for (DataSnapshot data : snapshot.getChildren()) {

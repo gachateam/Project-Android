@@ -50,6 +50,7 @@ public class StartQuizActivity extends AppCompatActivity {
         button.setOnClickListener(v -> {
             Intent intent1 = new Intent(StartQuizActivity.this, AnswerActivity.class);
             intent1.putExtra("ques", quesMul);
+            intent1.putExtra("unitId", intent.getExtras().get("unitId").toString());
             StartQuizActivity.this.startActivity(intent1);
             finish();
         });

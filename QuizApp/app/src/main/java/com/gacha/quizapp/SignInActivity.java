@@ -190,7 +190,7 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("test", "signInWithCredential:success");
-                            FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+                            firebaseFirestore = FirebaseFirestore.getInstance();
                             Profile profile = Profile.getCurrentProfile();
                             //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                             userID = firebaseAuth.getCurrentUser().getUid();

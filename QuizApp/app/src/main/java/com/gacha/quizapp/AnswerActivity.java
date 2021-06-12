@@ -30,8 +30,15 @@ import com.gacha.quizapp.fragments.QuesListenFragment;
 import com.gacha.quizapp.fragments.QuesMulFragment;
 import com.gacha.quizapp.fragments.QuesMulImageFragment;
 import com.gacha.quizapp.fragments.QuesSpeakFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AnswerActivity extends AppCompatActivity {
     private Button buttonNext;
@@ -40,6 +47,11 @@ public class AnswerActivity extends AppCompatActivity {
     private FragmentTransaction fragmentTransaction;
     private AbstractFragment fragment;
     private ArrayList<Ques> listQues;
+    private FirebaseUser firebaseUser;
+    private FirebaseAuth firebaseAuth;
+    private String userID;
+    private FirebaseFirestore firebaseFirestore;
+    private String unitId;
 
     private static final String TAG = AnswerActivity.class.getSimpleName();
 
@@ -48,8 +60,15 @@ public class AnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_questions);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        userID = firebaseUser.getUid();
+
         Intent intent = getIntent();
         listQues = (ArrayList<Ques>) intent.getExtras().get("ques");
+        unitId = intent.getExtras().getString("unitId");
 
         updateUI();
 
@@ -132,7 +151,15 @@ public class AnswerActivity extends AppCompatActivity {
         Button btnOk = alertDialog.findViewById(R.id.btn_ok);
 
         assert btnOk != null;
+        double finalPoint = point;
         btnOk.setOnClickListener(v1 -> {
+
+            String collectionPath = "users/"+userID+"/recent";
+            DocumentReference documentReference = firebaseFirestore.collection(collectionPath).document(unitId);
+            Map<String, Object> pointMap = new HashMap<>();
+            pointMap.put("point", finalPoint);
+            documentReference.set(pointMap);
+
             AnswerActivity.this.finish();
             alertDialog.dismiss();
         });
