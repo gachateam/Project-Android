@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,15 +16,23 @@ import androidx.fragment.app.Fragment;
 
 import com.gacha.quizapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
     private EditText uName, uEmail, uPassword, uConfirmPass;
     private Button btnSignUp;
     private View signUpFragment;
+    private FirebaseFirestore firebaseFirestore;
+    private String userID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +45,7 @@ public class SignUpFragment extends Fragment {
         btnSignUp = signUpFragment.findViewById(R.id.btnSignUp);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +82,17 @@ public class SignUpFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(getActivity(), "User created", Toast.LENGTH_LONG).show();
+                            userID = firebaseAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("userName", name);
+                            user.put("email", email);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("text", "user is created " + userID);
+                                }
+                            });
                         }else {
                             Toast.makeText(getActivity(), "Sign Up failed" + task.getException(), Toast.LENGTH_LONG).show();
                         }
