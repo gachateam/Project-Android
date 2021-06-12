@@ -6,8 +6,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -81,10 +83,13 @@ public class NavigationActivity extends AppCompatActivity {
                 View headerView = navigationView.getHeaderView(0);
                 TextView navUserName = headerView.findViewById(R.id.nav_name);
                 TextView navMail = headerView.findViewById(R.id.nav_mail);
+                ImageView navImg = headerView.findViewById(R.id.nav_img);
 
                 if(value == null || firebaseAuth.getCurrentUser() == null) return;
                 navUserName.setText(value.getString("userName"));
                 navMail.setText(value.getString("email"));
+
+                Glide.with(NavigationActivity.this).load(firebaseUser.getPhotoUrl()).into(navImg);
             }
         });
 
