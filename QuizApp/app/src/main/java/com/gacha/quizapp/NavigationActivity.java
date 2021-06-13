@@ -1,19 +1,15 @@
 package com.gacha.quizapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.facebook.login.LoginManager;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.facebook.AccessToken;
+import com.facebook.Profile;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -67,19 +63,19 @@ public class NavigationActivity extends AppCompatActivity {
         userID = firebaseUser.getUid();
 
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                View headerView = navigationView.getHeaderView(0);
-                TextView navUserName = headerView.findViewById(R.id.nav_name);
-                TextView navMail = headerView.findViewById(R.id.nav_mail);
-                ImageView navImg = headerView.findViewById(R.id.nav_img);
+        documentReference.addSnapshotListener((value, error) -> {
+            View headerView = navigationView.getHeaderView(0);
+            TextView navUserName = headerView.findViewById(R.id.nav_name);
+            TextView navMail = headerView.findViewById(R.id.nav_mail);
+            ImageView navImg = headerView.findViewById(R.id.nav_img);
+            Profile profile = Profile.getCurrentProfile();
 
-                if(value == null || firebaseAuth.getCurrentUser() == null) return;
-                navUserName.setText(value.getString("userName"));
-                navMail.setText(value.getString("email"));
+            if(value == null || firebaseAuth.getCurrentUser() == null) return;
+            navUserName.setText(value.getString("userName"));
+            navMail.setText(value.getString("email"));
 
-                Glide.with(NavigationActivity.this).load(firebaseUser.getPhotoUrl()).into(navImg);
+            if(firebaseUser.getPhotoUrl() != null){
+                Glide.with(NavigationActivity.this).load(firebaseUser.getPhotoUrl().toString()).into(navImg);
             }
         });
     }
