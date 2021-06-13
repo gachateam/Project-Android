@@ -55,7 +55,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_sign_out)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home,R.id.nav_profile,R.id.nav_setting,R.id.nav_recent, R.id.nav_sign_out)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -75,13 +75,13 @@ public class NavigationActivity extends AppCompatActivity {
             navMail.setText(value.getString("email"));
         });
 
-        navigationView.setNavigationItemSelectedListener(menuItem -> {
-            int id = menuItem.getItemId();
-            if (id == R.id.nav_sign_out) {
-                signOut();
-            }
-            return true;
-        });
+//        navigationView.setNavigationItemSelectedListener(menuItem -> {
+//            int id = menuItem.getItemId();
+//            if (id == R.id.nav_sign_out) {
+//                signOut();
+//            }
+//            return true;
+//        });
     }
 
     @Override

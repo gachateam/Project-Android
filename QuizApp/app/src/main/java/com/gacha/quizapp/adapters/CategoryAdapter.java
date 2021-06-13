@@ -1,12 +1,10 @@
 package com.gacha.quizapp.adapters;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,16 +12,12 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gacha.quizapp.AnswerActivity;
 import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.Unit;
 import com.gacha.quizapp.R;
-import com.gacha.quizapp.StartActivity;
-import com.gacha.quizapp.ui.home.HomeFragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
