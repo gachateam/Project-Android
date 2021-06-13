@@ -4,6 +4,10 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        English_Learn {
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -15,12 +19,18 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.English_Learn
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        English_Learn {
+        debuggable true
+            signingConfig signingConfigs.debug
+            renderscriptOptimLevel 3
         }
     }
     compileOptions {
