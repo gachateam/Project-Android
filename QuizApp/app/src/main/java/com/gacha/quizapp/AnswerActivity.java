@@ -151,13 +151,18 @@ public class AnswerActivity extends AppCompatActivity {
         Button btnOk = alertDialog.findViewById(R.id.btn_ok);
 
         assert btnOk != null;
-        double finalPoint = point;
         btnOk.setOnClickListener(v1 -> {
 
             String collectionPath = "users/"+userID+"/recent";
             DocumentReference documentReference = firebaseFirestore.collection(collectionPath).document(unitId);
             Map<String, Object> pointMap = new HashMap<>();
-            pointMap.put("point", finalPoint);
+            pointMap.put("point", result);
+            pointMap.put("numberQues", listQues.size());
+            ArrayList<Boolean> quesResult = new ArrayList<>();
+            for (Ques ques : listQues) {
+                quesResult.add(ques.getPoint());
+            }
+            pointMap.put("quesResult", quesResult);
             documentReference.set(pointMap);
 
             AnswerActivity.this.finish();

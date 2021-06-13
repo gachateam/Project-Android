@@ -14,8 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.Unit;
+import com.gacha.quizapp.Model.UserHistory;
 import com.gacha.quizapp.R;
 import com.gacha.quizapp.StartQuizActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -24,8 +32,12 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
     private int layoutID;
     private ArrayList<Unit> list;
     private ArrayList<Ques> listQues;
+    private UserHistory userHistory;
 
     public void setList(ArrayList<Unit> list) {
+        for (Unit unit : list) {
+            Log.d(TAG, "setList: "+unit);
+        }
         this.list = list;
     }
 
@@ -36,6 +48,7 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
         this.layoutID = layoutID;
         this.list = list;
         this.listQues = listQues;
+        userHistory = new UserHistory();
     }
 
     @NonNull
@@ -48,6 +61,7 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        userHistory.getHistoryPoint(list.get(position).getId(),holder.userHistory);
         holder.quizName.setText(list.get(position).getName());
         holder.quizDescription.setText(list.get(position).getDescription());
         holder.start.setOnClickListener(v -> {
@@ -71,7 +85,7 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView quizName,quizDescription;
+        public TextView quizName,quizDescription,userHistory;
         public Button start;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -79,6 +93,7 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
 
             quizName = itemView.findViewById(R.id.quiz_name);
             quizDescription = itemView.findViewById(R.id.quiz_description);
+            userHistory = itemView.findViewById(R.id.userHistory);
             start = itemView.findViewById(R.id.btn_start);
         }
     }

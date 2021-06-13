@@ -39,4 +39,10 @@
         android:label="@string/menu_history"
         tools:layout="@layout/history_screen" />
 
+    <fragment
+        android:id="@+id/nav_sign_out"
+        android:name="com.gacha.quizapp.ui.home.SignOutFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/history_screen" />
+
 </navigation>

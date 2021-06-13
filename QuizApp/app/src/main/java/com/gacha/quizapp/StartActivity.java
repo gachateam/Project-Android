@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.gacha.quizapp.Model.Category;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMul;
@@ -16,8 +14,6 @@ import com.gacha.quizapp.Model.QuesListen;
 import com.gacha.quizapp.Model.QuesMulImage;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.Model.Unit;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,18 +25,18 @@ import java.util.ArrayList;
 public class StartActivity extends AppCompatActivity {
 
     private static final String TAG = StartActivity.class.getSimpleName();
+    ArrayList<Category> listCategory;
+    ArrayList<Ques> listQues;
+    ArrayList<Unit> listUnit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_screen);
 
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        FirebaseUser user = auth.getCurrentUser();
-
-        ArrayList<Category> listCategory = new ArrayList<>();
-        ArrayList<Ques> listQues = new ArrayList<>();
-        ArrayList<Unit> listUnit = new ArrayList<>();
+        listCategory = new ArrayList<>();
+        listQues = new ArrayList<>();
+        listUnit = new ArrayList<>();
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("/");
@@ -79,6 +75,7 @@ public class StartActivity extends AppCompatActivity {
                 intent.putExtra("listQues", listQues);
                 intent.putExtra("listUnit", listUnit);
                 StartActivity.this.startActivity(intent);
+                ref.removeEventListener(this);
                 finish();
             }
 
@@ -88,5 +85,4 @@ public class StartActivity extends AppCompatActivity {
             }
         });
     }
-
 }

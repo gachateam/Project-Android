@@ -1,11 +1,17 @@
 package com.gacha.quizapp.Model;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Unit implements Serializable {
     private String name;
@@ -67,6 +73,10 @@ public class Unit implements Serializable {
     public Unit() {
     }
 
+    public Unit(int id) {
+        this.id = id;
+    }
+
     @NonNull
     @Override
     public String toString() {
@@ -97,6 +107,17 @@ public class Unit implements Serializable {
             if (unit.getCategory()==catId){
                 units1.add(unit);
             }
+        }
+
+        return units1;
+    }
+
+    public static ArrayList<Unit> getAllQuesHistoryInList(ArrayList<Unit> units,Task<QuerySnapshot> task){
+        ArrayList<Unit> units1 = new ArrayList<>();
+
+        for (QueryDocumentSnapshot document : task.getResult()) {
+            int index = Collections.binarySearch(units, new Unit(Integer.parseInt(document.getId())), (u1, u2) -> u1.getId() - u2.getId());
+            units1.add(units.get(index));
         }
 
         return units1;
