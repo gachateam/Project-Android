@@ -74,17 +74,17 @@
             card_view:cardElevation="6dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/quesImage4"
+                android:id="@+id/quesImage2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/ques_image_selector">
 
                 <ImageView
-                    android:id="@+id/imageQues4"
+                    android:id="@+id/imageQues2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/quesA"
-                    app:layout_constraintBottom_toTopOf="@+id/textQues4"
+                    app:layout_constraintBottom_toTopOf="@+id/textQues2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textQues4"
+                    android:id="@+id/textQues2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/quesD"
@@ -130,17 +130,17 @@
             tools:ignore="NestedWeights">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/quesImage2"
+                android:id="@+id/quesImage3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/ques_image_selector">
 
                 <ImageView
-                    android:id="@+id/imageQues2"
+                    android:id="@+id/imageQues3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/quesA"
-                    app:layout_constraintBottom_toTopOf="@+id/textQues2"
+                    app:layout_constraintBottom_toTopOf="@+id/textQues3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textQues2"
+                    android:id="@+id/textQues3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/quesB"
@@ -174,17 +174,17 @@
             card_view:cardElevation="6dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/quesImage3"
+                android:id="@+id/quesImage4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/ques_image_selector">
 
                 <ImageView
-                    android:id="@+id/imageQues3"
+                    android:id="@+id/imageQues4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/quesA"
-                    app:layout_constraintBottom_toTopOf="@+id/textQues3"
+                    app:layout_constraintBottom_toTopOf="@+id/textQues4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textQues3"
+                    android:id="@+id/textQues4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/quesC"

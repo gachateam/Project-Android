@@ -1,7 +1,5 @@
 package com.gacha.quizapp.fragments;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,15 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.bumptech.glide.Glide;
-import com.gacha.quizapp.AnswerActivity;
 import com.gacha.quizapp.Model.Ques;
 import com.gacha.quizapp.Model.QuesMulImage;
 import com.gacha.quizapp.R;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -72,9 +65,9 @@ public class QuesMulImageFragment extends AbstractFragment {
         TextView textView = view.findViewById(R.id.ques);
         textView.setText(quesMulImage.getQues());
         ConstraintLayout ques1 = view.findViewById(R.id.quesImage1);
-        ConstraintLayout ques2 = view.findViewById(R.id.quesImage4);
-        ConstraintLayout ques3 = view.findViewById(R.id.quesImage2);
-        ConstraintLayout ques4 = view.findViewById(R.id.quesImage3);
+        ConstraintLayout ques2 = view.findViewById(R.id.quesImage2);
+        ConstraintLayout ques3 = view.findViewById(R.id.quesImage3);
+        ConstraintLayout ques4 = view.findViewById(R.id.quesImage4);
         ques = new ArrayList<>();
         Collections.addAll(ques, ques1, ques2, ques3, ques4);
         for (ConstraintLayout constrain : ques) {

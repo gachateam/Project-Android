@@ -53,7 +53,15 @@ public class QuesListenFragment extends AbstractFragment {
 
         textToSpeech.setLanguage(Locale.ENGLISH);
 
-        view.findViewById(R.id.btnVoice).setOnClickListener(v -> speakOut());
+        view.findViewById(R.id.btnVoice).setOnClickListener(v -> {
+            textToSpeech.setSpeechRate(1);
+            speakOut();
+        });
+
+        view.findViewById(R.id.slow).setOnClickListener(v -> {
+            textToSpeech.setSpeechRate(0.5f);
+            speakOut();
+        });
 
         return view;
     }
