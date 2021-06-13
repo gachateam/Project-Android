@@ -19,6 +19,7 @@ import com.facebook.FacebookException;
 import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.gacha.quizapp.Model.QuesSpeak;
 import com.gacha.quizapp.adapters.SignInAdapter;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -50,6 +51,9 @@ public class SignInActivity extends AppCompatActivity {
     private String userID;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseUser firebaseUser;
+
+    private static final String TAG = QuesSpeak.class.getSimpleName();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,12 +101,7 @@ public class SignInActivity extends AppCompatActivity {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        btnGg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
+        btnGg.setOnClickListener(v -> signIn());
 
         callbackManager = CallbackManager.Factory.create();
         btnFb.setOnClickListener(new View.OnClickListener() {
@@ -171,7 +170,7 @@ public class SignInActivity extends AppCompatActivity {
                             user.put("userName", acct.getDisplayName());
                             user.put("email", acct.getEmail());
                             documentReference.set(user);
-                            startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
+                            startActivity(new Intent(SignInActivity.this, StartActivity.class));
                             finish();
                         } else {
                             Toast.makeText(SignInActivity.this, "Errorx2", Toast.LENGTH_LONG).show();
@@ -191,16 +190,18 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("test", "signInWithCredential:success");
-                            FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+                            firebaseFirestore = FirebaseFirestore.getInstance();
                             Profile profile = Profile.getCurrentProfile();
-//                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                             userID = firebaseAuth.getCurrentUser().getUid();
+
                             DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
                             user.put("userName", profile.getName());
                             user.put("email", firebaseUser.getEmail());
                             documentReference.set(user);
-                            startActivity(new Intent(SignInActivity.this, NavigationActivity.class));
+
+                            startActivity(new Intent(SignInActivity.this, StartActivity.class));
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.

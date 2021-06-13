@@ -1,8 +1,20 @@
 package com.gacha.quizapp.Model;
 
-public class Category {
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
+public class Category implements Serializable {
     private String category;
-    private int color;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCategory() {
         return category;
@@ -12,16 +24,18 @@ public class Category {
         this.category = category;
     }
 
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
-    }
-
-    public Category(String category, int color) {
+    public Category(int id,String category) {
         this.category = category;
-        this.color = color;
+        this.id = id;
+    }
+    public Category() {
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "category='" + category + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

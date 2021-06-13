@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.gacha.quizapp.fragment.SignInFragment;
-import com.gacha.quizapp.fragment.SignUpFragment;
+import com.gacha.quizapp.fragments.SignInFragment;
+import com.gacha.quizapp.fragments.SignUpFragment;
 
 public class SignInAdapter extends FragmentPagerAdapter {
     private Context context;
     int totalTabs;
+
+    private static final String TAG = SignInAdapter.class.getSimpleName();
 
     public SignInAdapter(FragmentManager fm, Context context, int totalTabs){
         super(fm);

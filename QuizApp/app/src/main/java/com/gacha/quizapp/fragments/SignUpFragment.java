@@ -1,4 +1,4 @@
-package com.gacha.quizapp.fragment;
+package com.gacha.quizapp.fragments;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -33,6 +33,8 @@ public class SignUpFragment extends Fragment {
     private View signUpFragment;
     private FirebaseFirestore firebaseFirestore;
     private String userID;
+
+    private static final String TAG = SignUpFragment.class.getSimpleName();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -9,7 +9,40 @@
         android:id="@+id/nav_home"
         android:name="com.gacha.quizapp.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/home_screen" />
+        tools:layout="@layout/home_screen" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_recent2"
+            app:destination="@id/nav_recent" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_setting"
+            app:destination="@id/nav_setting" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.gacha.quizapp.ui.home.SettingFragment"
+        android:label="@string/menu_setting"
+        tools:layout="@layout/setting_screen" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.gacha.quizapp.ui.home.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/profile_screen" />
+
+    <fragment
+        android:id="@+id/nav_recent"
+        android:name="com.gacha.quizapp.ui.home.RecentFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/history_screen" />
+
+    <fragment
+        android:id="@+id/nav_sign_out"
+        android:name="com.gacha.quizapp.ui.home.SignOutFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/history_screen" />
 
 </navigation>

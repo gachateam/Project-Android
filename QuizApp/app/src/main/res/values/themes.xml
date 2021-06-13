@@ -22,6 +22,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="iconTurtle">
+        <item name="srcCompat">@drawable/ic_turtle_night</item>
+    </style>
+
     <style name="Theme.QuizApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.QuizApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

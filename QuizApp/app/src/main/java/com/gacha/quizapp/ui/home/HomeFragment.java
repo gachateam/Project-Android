@@ -1,8 +1,7 @@
 package com.gacha.quizapp.ui.home;
 
 import android.app.Activity;
-import android.content.res.Configuration;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,19 +15,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gacha.quizapp.Model.Category;
-import com.gacha.quizapp.Model.RecentQuizzes;
+import com.gacha.quizapp.Model.Ques;
+import com.gacha.quizapp.Model.QuesMul;
+import com.gacha.quizapp.Model.Unit;
 import com.gacha.quizapp.R;
+import com.gacha.quizapp.StartQuizActivity;
 import com.gacha.quizapp.adapters.CategoryAdapter;
 import com.gacha.quizapp.adapters.RecentQuizAdapter;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class HomeFragment extends Fragment {
 
@@ -38,66 +33,29 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.home_screen, container, false);
         Activity context = (Activity) view.getContext();
 
-        //create color array
-        HashMap<String,Integer> color = new HashMap<>();
-        color.put("black",this.getResources().getColor(R.color.black));
-        color.put("blue",this.getResources().getColor(R.color.blue));
-        color.put("colorPrimary",this.getResources().getColor(R.color.colorPrimary));
-        color.put("colorPrimaryDark",this.getResources().getColor(R.color.colorPrimaryDark));
+        Intent intent = context.getIntent();
+        ArrayList<Category> listCategory = (ArrayList<Category>) intent.getExtras().get("listCategory");
+        ArrayList<Ques> listQues = (ArrayList<Ques>) intent.getExtras().get("listQues");
+        ArrayList<Unit> listUnit = (ArrayList<Unit>) intent.getExtras().get("listUnit");
 
-        //get recycler view from view
+        for(Ques ques: listQues){
+            Log.d(TAG, "onCreateView: "+ques);
+        }
+
         RecyclerView recyclerViewCategory = view.findViewById(R.id.category_recycler_view);
         RecyclerView recyclerViewRecentQuiz = view.findViewById(R.id.recent_quiz_recycler_view);
 
-        //construct list category and list recent quiz
-        ArrayList<Category> listCategory = new ArrayList<>();
-        ArrayList<RecentQuizzes> listRecentQuizzes = new ArrayList<>();
+        GridLayoutManager gridLayoutManagerCategory = new GridLayoutManager(context, 1, LinearLayoutManager.HORIZONTAL, false);
+        GridLayoutManager gridLayoutManagerRecentQuiz = new GridLayoutManager(context, 1, LinearLayoutManager.VERTICAL, false);
 
-        //create category manager
-        GridLayoutManager gridLayoutManagerCategory = new GridLayoutManager(context,1, LinearLayoutManager.HORIZONTAL,false);
-
-        //create recent quiz manager
-        GridLayoutManager gridLayoutManagerRecentQuiz = new GridLayoutManager(context,1,LinearLayoutManager.VERTICAL,false);
-
-        //set manager to recycler view category
         recyclerViewCategory.setLayoutManager(gridLayoutManagerCategory);
-
-        //set manager to recycler view recent quiz
         recyclerViewRecentQuiz.setLayoutManager(gridLayoutManagerRecentQuiz);
 
-        //get firebase reference
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("TracNghiem");
+        RecentQuizAdapter adapterRecentQuiz = new RecentQuizAdapter(context, R.layout.recent_quiz_recycler_view_item, listUnit, listQues);
+        CategoryAdapter adapterCategory = new CategoryAdapter(context, R.layout.category_item_recycler_view, listCategory, listUnit, listQues,adapterRecentQuiz);
 
-        Query query = ref.limitToFirst(5);
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<Category> categories = new ArrayList<>();
-                ArrayList<RecentQuizzes> recentQuizzes = new ArrayList<>();
-                for (DataSnapshot data: snapshot.getChildren()){
-                    String name = data.child("name").getValue(String.class);
-                    String description = data.child("description").getValue(String.class);
-                    int colorValue = color.get(data.child("color").getValue(String.class));
-                    categories.add(new Category(name,colorValue));
-                    name = name.length()>15?name.substring(0,15) + "...":name;
-                    recentQuizzes.add(new RecentQuizzes(name,description));
-                }
-                listCategory.clear();
-                listRecentQuizzes.clear();
-                listCategory.addAll(categories);
-                listRecentQuizzes.addAll(recentQuizzes);
-                CategoryAdapter adapterCategory = new CategoryAdapter(context,R.layout.category_item_recycler_view, listCategory);
-                RecentQuizAdapter adapterRecentQuiz = new RecentQuizAdapter(context,R.layout.recent_quiz_recycler_view_item, listRecentQuizzes);
-                recyclerViewRecentQuiz.setAdapter(adapterRecentQuiz);
-                recyclerViewCategory.setAdapter(adapterCategory);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d(TAG, "onCancelled: "+error.getMessage());
-            }
-        });
+        recyclerViewRecentQuiz.setAdapter(adapterRecentQuiz);
+        recyclerViewCategory.setAdapter(adapterCategory);
 
         return view;
     }
