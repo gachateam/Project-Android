@@ -153,7 +153,7 @@ public class AnswerActivity extends AppCompatActivity {
         assert btnOk != null;
         btnOk.setOnClickListener(v1 -> {
 
-            String collectionPath = "users/"+userID+"/recent";
+            String collectionPath = "users/" + userID + "/recent";
             DocumentReference documentReference = firebaseFirestore.collection(collectionPath).document(unitId);
             Map<String, Object> pointMap = new HashMap<>();
             pointMap.put("point", result);
