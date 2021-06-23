@@ -35,9 +35,6 @@ public class RecentQuizAdapter extends RecyclerView.Adapter<RecentQuizAdapter.My
     private UserHistory userHistory;
 
     public void setList(ArrayList<Unit> list) {
-        for (Unit unit : list) {
-            Log.d(TAG, "setList: "+unit);
-        }
         this.list = list;
     }
 

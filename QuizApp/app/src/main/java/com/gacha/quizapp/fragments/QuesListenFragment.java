@@ -47,9 +47,7 @@ public class QuesListenFragment extends AbstractFragment {
         View view = inflater.inflate(R.layout.ques_listen_fragment, container, false);
 
         editText = view.findViewById(R.id.resultListen);
-        textToSpeech = new TextToSpeech(getContext(), status -> {
-            Log.d("TAG", "onCreateView: create successfully " + status);
-        });
+        textToSpeech = new TextToSpeech(getContext(), status -> Log.d(TAG, "onCreateView: create successfully " + status));
 
         textToSpeech.setLanguage(Locale.ENGLISH);
 
