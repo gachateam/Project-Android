@@ -1,10 +1,15 @@
 package com.gacha.quizapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.facebook.AccessToken;
+import com.facebook.Profile;
 import com.gacha.quizapp.Model.QuesSpeak;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,14 +63,20 @@ public class NavigationActivity extends AppCompatActivity {
         userID = firebaseUser.getUid();
 
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
-        documentReference.addSnapshotListener(this, (value, error) -> {
+        documentReference.addSnapshotListener((value, error) -> {
             View headerView = navigationView.getHeaderView(0);
             TextView navUserName = headerView.findViewById(R.id.nav_name);
             TextView navMail = headerView.findViewById(R.id.nav_mail);
+            ImageView navImg = headerView.findViewById(R.id.nav_img);
+            Profile profile = Profile.getCurrentProfile();
 
-            if (value == null || firebaseAuth.getCurrentUser() == null) return;
+            if(value == null || firebaseAuth.getCurrentUser() == null) return;
             navUserName.setText(value.getString("userName"));
             navMail.setText(value.getString("email"));
+
+            if(firebaseUser.getPhotoUrl() != null){
+                Glide.with(NavigationActivity.this).load(firebaseUser.getPhotoUrl().toString()).into(navImg);
+            }
         });
     }
 

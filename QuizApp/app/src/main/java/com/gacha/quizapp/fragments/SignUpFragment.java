@@ -1,5 +1,6 @@
 package com.gacha.quizapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,11 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.gacha.quizapp.R;
+import com.gacha.quizapp.SignInActivity;
+import com.gacha.quizapp.StartActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -39,6 +43,7 @@ public class SignUpFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         signUpFragment = inflater.inflate(R.layout.signup_fragment, container, false);
+        Log.d(TAG, "onCreateView: ");
 
         uName = signUpFragment.findViewById(R.id.editTextTextPersonName);
         uEmail = signUpFragment.findViewById(R.id.editTextTextEmailAddress2);
@@ -95,6 +100,8 @@ public class SignUpFragment extends Fragment {
                                     Log.d("text", "user is created " + userID);
                                 }
                             });
+                            startActivity(new Intent(SignUpFragment.this.getActivity(), StartActivity.class));
+                            getActivity().finish();
                         }else {
                             Toast.makeText(getActivity(), "Sign Up failed" + task.getException(), Toast.LENGTH_LONG).show();
                         }

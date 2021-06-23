@@ -128,8 +128,15 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+    }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser != null){
+            startActivity(new Intent(SignInActivity.this, StartActivity.class));
+        }
     }
 
     private void signIn() {
@@ -163,6 +170,7 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
                             GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(SignInActivity.this);
+
 //                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                             userID = firebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
@@ -195,10 +203,12 @@ public class SignInActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                             userID = firebaseAuth.getCurrentUser().getUid();
 
+
                             DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
+
                             user.put("userName", profile.getName());
-                            user.put("email", firebaseUser.getEmail());
+                            user.put("email", firebaseAuth.getCurrentUser().getEmail() == null?"":firebaseAuth.getCurrentUser().getEmail());
                             documentReference.set(user);
 
                             startActivity(new Intent(SignInActivity.this, StartActivity.class));
